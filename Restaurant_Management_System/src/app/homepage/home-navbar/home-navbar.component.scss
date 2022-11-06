@@ -1,17 +1,28 @@
+.navbar{
+  height: 120px;
+  border: none;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 8px 8px -6px rgba(255, 255, 255, 0.9);
+}
+
 .container-fluid{
   height: 80px;
-  background-color: black;
-  margin-left: 20px;
-  margin-right: 20px;
+  background-color: rgb(255, 255, 255);
+  margin-top: 0px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 30px;
+  padding-top: 0px;
+  box-shadow: 0px 8px 8px -6px rgba(0,0,0,.5);
 }
 
 .navbar-brand {
-  color: #fff;
+  color: rgb(0, 0, 0);
   font-size: 40px;
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 2px;
-  margin-left: 40px;
+  margin-left: 80px;
 }
 
 #navbar-content{
@@ -19,21 +30,27 @@
 }
 
 .nav-link{
-  color: #fff;
+  color: rgb(0, 0, 0);
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .nav-link:hover{
-  color: rebeccapurple;
+  color: #e6b115;
+}
+
+i{
+  color: #e6b115;
 }
 
 #navbar-login {
   text-transform: uppercase;
+  font-weight: bold;
   margin-right: 40px;
+  text-decoration: none;
+  color: #e6b115;
+  margin-left: 20px;
 }
-
-
-
-
 
 
 
