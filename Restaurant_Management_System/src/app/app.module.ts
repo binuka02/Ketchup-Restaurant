@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from "@angular/common/http";
 
 import { HomeNavbarComponent } from './homepage/home-navbar/home-navbar.component';
-import { LoginComponent } from './auth/loginpage/login-page.component';
+import { CustomerLoginComponent } from './auth/customer-login-page/customer-login.component';
+import { AdminLoginComponent } from './auth/admin-login-page/admin-login.component';
+import { SignupComponent } from './auth/signup-page/signup-page.component';
 import { HomeBodyComponent } from './homepage/home-body/home-body.component';
 import { FooterComponent } from './footer/footer.component';
 
@@ -30,7 +33,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   declarations: [
     AppComponent,
     HomeNavbarComponent,
-    LoginComponent,
+    AdminLoginComponent,
+    CustomerLoginComponent,
+    SignupComponent,
     HomeBodyComponent,
     FooterComponent
   ],
@@ -53,6 +58,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MdbTooltipModule,
     MdbValidationModule,
     BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
