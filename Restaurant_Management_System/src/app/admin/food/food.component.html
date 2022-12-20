@@ -1,0 +1,61 @@
+<div class="container py-3">
+  <div class="row">
+      <div class="col-md-6">
+          <h2>Food Management</h2>
+      </div>
+      <div class="col ml-auto text-right">
+          <button type="button" class="btn btn-outline-success" (click)="onAddFood()">Add Food</button>
+      </div>
+  </div>
+  <hr>
+  <div class="row">
+      <div class="col-md-4" *ngFor="let item of food">
+          <div class="card mb-3">
+              <div class="card-body">
+                  <h5 class="card-title">{{item.name}}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">{{item.price}}</h6>
+                  <span class="badge" [ngClass]="{'badge-success': item.description =='Design', 'badge-danger' : item.description !='Design'}">{{item.description}}</span>
+                  <hr>
+                  <button type="button" class="btn btn-sm btn-outline-primary mr-2" (click)="onEditFood(item)">Edit</button>
+                  <button type="button" class="btn btn-sm btn-outline-danger" (click)="onDeleteFood(item._id)">Delete</button>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div class="modal fade show" [class.show]="showModal">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title">{{editMode? 'Update' :'Add'}} Food</h5>
+              <button (click)="onCloseModal()" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <form [formGroup]="foodForm" (ngSubmit)="onFoodSubmit()">
+              <div class="modal-body">
+                  <div class="form-group">
+                      <label>Enter Name</label>
+                      <input type="text" class="form-control" formControlName="name">
+                      <small *ngIf="!foodForm.get('name')?.valid && foodForm.get('name')?.touched" class="form-text text-danger">Please Enter Name.</small>
+                  </div>
+                  <div class="form-group">
+                      <label>Enter price</label>
+                      <input type="text" class="form-control" formControlName="price">
+                      <small *ngIf="!foodForm.get('position')?.valid && foodForm.get('position')?.touched"class="form-text text-danger">Please Enter price.</small>
+                  </div>
+                  <div class="form-group">
+                      <label>Enter descripton</label>
+                      <input type="text" class="form-control" formControlName="description">
+                      <small *ngIf="!foodForm.get('description')?.valid && foodForm.get('description')?.touched"class="form-text text-danger">Please Enter description.</small>
+                  </div>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" (click)="onCloseModal()" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary">{{editMode? 'Update Food' :'Add Food'}}</button>
+              </div>
+          </form>
+      </div>
+  </div>
+</div>

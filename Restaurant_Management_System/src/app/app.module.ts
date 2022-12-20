@@ -8,7 +8,7 @@ import { AdminLoginComponent } from './auth/admin-login-page/admin-login.compone
 import { SignupComponent } from './auth/signup-page/signup-page.component';
 import { HomeBodyComponent } from './homepage/home-body/home-body.component';
 import { FooterComponent } from './footer/footer.component';
-
+import { FoodComponent } from './admin/food/food.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,6 +28,7 @@ import { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';
 import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CustomerLoginComponent,
     SignupComponent,
     HomeBodyComponent,
-    FooterComponent
+    FooterComponent,
+    FoodComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +60,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MdbTooltipModule,
     MdbValidationModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

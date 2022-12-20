@@ -7,5 +7,24 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
-  }
+  },
+  "name": "restaurant_management_system",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd backend && nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/binuka02/Restaurant_Management_System.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/binuka02/Restaurant_Management_System/issues"
+  },
+  "homepage": "https://github.com/binuka02/Restaurant_Management_System#readme"
 }

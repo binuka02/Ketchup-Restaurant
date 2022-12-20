@@ -31,6 +31,7 @@ router.get('/', (req, res) => {
 
 //POST API
 router.post('/', (req, res) => {
+    console.log(req.body)
     let food = new Food({
         name: req.body.name,
         price: req.body.price,
