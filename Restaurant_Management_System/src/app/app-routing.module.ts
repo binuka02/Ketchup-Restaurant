@@ -8,8 +8,7 @@ import { FoodComponent } from './admin/food/food.component';
 const routes: Routes = [
 
  { path: '', component: HomeBodyComponent },
- {path:"admin",component:FoodComponent},
-
+ { path:"admin-food",component:FoodComponent},
  { path: 'admin-login', component: AdminLoginComponent },
  { path: 'home-breakfast', component: BreakfastComponent}
 

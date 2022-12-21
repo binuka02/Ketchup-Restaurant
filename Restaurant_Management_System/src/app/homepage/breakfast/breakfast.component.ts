@@ -25,6 +25,7 @@ export class BreakfastComponent implements OnInit{
     this.homePageService.getBreakfastItems().subscribe((res:any) => {
       console.log(res);
       this.food = res;
+
     })
   }
 

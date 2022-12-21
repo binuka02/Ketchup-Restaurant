@@ -37,22 +37,31 @@
 
 .nav-link:hover{
   color: #e6b115;
+  -ms-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
-i{
-  color: rgb(230, 177, 21);
-}
 
 #navbar-login {
   text-transform: uppercase;
   font-weight: bold;
-  margin-right: 40px;
   text-decoration: none;
-  color: #e6b115;
+
   margin-left: 20px;
 }
 
+i{
+  padding-right: 50px;
+  color: #e6b115;
+}
 
+i:hover {
+  -ms-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+
+}
 
 
 

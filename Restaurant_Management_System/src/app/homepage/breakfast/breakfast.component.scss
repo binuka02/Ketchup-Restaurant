@@ -6,3 +6,230 @@
   margin-bottom: 5px;
   display: block;
 }
+
+
+///
+i{
+  color: rgb(230, 177, 21);
+}
+.col-md-12 p{
+  font-family: elephant;
+  font-weight: bold;
+  text-align: center;
+  font-size: 50px;
+  margin-top: 50px;
+}
+
+hr{
+  height: 2px;
+}
+
+header {
+	position:relative;
+	left:0;
+	top:0;
+	width:100%;
+	min-height:120px;
+	padding:50px 0;
+	color:#fff;
+	    background: #383838 url(https://www.athenadesignstudio.com/plugins/switch/images/bg.jpg) no-repeat center center;
+	margin-bottom:30px
+}
+
+/* Logo */
+header .logo {
+	clear:both;
+    display:block;
+	text-align:center;
+    padding-bottom:10px;
+}
+
+/* Title */
+header h1 {
+    font-weight:300;
+    font-size:24px;
+    color:#eee;
+	letter-spacing:2px;
+	text-align:center;
+	text-transform:uppercase;
+	margin:0 !important;
+	padding-bottom:25px;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900|Open Sans:400,600,800');
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+input,
+p,
+a {
+    font-family: "Open Sans";
+    margin: 0px;
+}
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+}
+
+body {
+    background-color: #F1F2F3;
+}
+
+.container-fluid,
+.container {
+    max-width: 1200px;
+    margin-left: auto; margin-right: auto;
+}
+
+.card-container {
+    padding: 100px 0px;
+    -webkit-perspective: 1000;
+    perspective: 1000;
+}
+
+.profile-card-4 {
+  max-width: 300px;
+  background-color: #FFF;
+  border-radius: 5px;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  margin: 10px auto;
+  cursor: pointer;
+}
+
+.profile-card-4 img {
+  transition: all 0.25s linear;
+}
+
+.profile-card-4 .profile-content {
+  position: relative;
+  padding: 15px;
+  background-color: #FFF;
+}
+
+.profile-card-4 .profile-name {
+  font-weight: bold;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: -70px;
+  color: #FFF;
+  font-size: 17px;
+}
+
+.profile-card-4 .profile-name p {
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+}
+
+.profile-card-4 .item-name{
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  padding-left: 10px;
+  margin-right: 10px;
+}
+
+.profile-card-4 .item-description {
+  color: #777;
+  font-size: 12px;
+  padding-left: 10px;
+  margin-right: 10px;
+  padding-top: 20px;
+}
+
+.item_price{
+  color: #777;
+  font-size: 15px;
+  // font-weight: bold;
+  padding-left: 10px;
+  margin-right: 10px;
+}
+
+.profile-card-4 .profile-overview {
+  padding: 15px 0px;
+}
+
+
+.profile-card-4 .profile-overview h4 {
+  color: #273751;
+  font-weight: bold;
+
+}
+
+.profile-card-4 .profile-content::before {
+  content: "";
+  position: absolute;
+  height: 20px;
+  top: -10px;
+  left: 0px;
+  right: 0px;
+  background-color: #FFF;
+  z-index: 0;
+  transform: skewY(3deg);
+}
+
+.profile-card-4:hover img {
+  transform: rotate(5deg) scale(1.1, 1.1);
+  filter: brightness(110%);
+}
+
+.profile-card-4:hover {
+  box-shadow: 0px 8px 8px -6px rgba(0,0,0,.5);
+}
+
+//Button Style
+
+.button-hover-addcart {
+  border: 2px solid #767676;
+  border-radius: 5px;
+  background: transparent;
+  color: #767676;
+  text-transform: uppercase;
+  overflow: hidden;
+  // font-weight: bold;
+  width: 180px;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+
+}
+
+.button-hover-addcart span {
+  transition: all 0.2s ease-in-out;
+}
+
+.button-hover-addcart .fa {
+  position: absolute;
+  font-size: 1.2rem;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  color: #e6b115;
+  right: -25px;
+  transition: 0.4s right cubic-bezier(0.38, 0.6, 0.48, 1);
+}
+
+.button-hover-addcart:hover {
+  border-color: #e6b115;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+
+.button-hover-addcart:hover span {
+  margin-right: 20px;
+  color: #e6b115;
+}
+
+.button-hover-addcart:hover .fa {
+  right: 12px;
+}
+
