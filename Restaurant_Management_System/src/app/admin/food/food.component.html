@@ -50,6 +50,16 @@
                       <input type="text" class="form-control" formControlName="description">
                       <small *ngIf="!foodForm.get('description')?.valid && foodForm.get('description')?.touched"class="form-text text-danger">Please Enter description.</small>
                   </div>
+                  <div class="form-group">
+                    <label>Enter Type</label>
+                    <input type="text" class="form-control" formControlName="type">
+                    <small *ngIf="!foodForm.get('type')?.valid && foodForm.get('type')?.touched" class="form-text text-danger">Please Enter Name.</small>
+                </div>
+                <div class="form-group">
+                  <label>Enter Name</label>
+                  <input type="file" class="form-control" formControlName="image" (change)="handleFileInput($event)">
+                  <small *ngIf="!foodForm.get('image')?.valid && foodForm.get('image')?.touched" class="form-text text-danger">Please Enter Name.</small>
+              </div>
               </div>
               <div class="modal-footer">
                   <button type="button" (click)="onCloseModal()" class="btn btn-secondary" data-dismiss="modal">Close</button>

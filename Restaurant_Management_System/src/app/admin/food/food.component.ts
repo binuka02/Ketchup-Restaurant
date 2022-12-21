@@ -13,12 +13,16 @@ export class FoodComponent implements OnInit {
   foodForm : FormGroup = new FormGroup({
     name: new FormControl(''),
     price: new FormControl(''),
-    description: new FormControl('')
+    description: new FormControl(''),
+    type: new FormControl(''),
+    image: new FormControl('')
   });
   showModal: boolean = false;
   editMode: boolean = false;
   food: Food[] = [];
-
+  imageFile: File | null = null;
+  imagePicked = "";
+  id =""
   constructor(private fb: FormBuilder, private foodService: FoodService) { }
 
 
@@ -55,6 +59,7 @@ export class FoodComponent implements OnInit {
   onEditFood(food: Food) {
     this.editMode = true;
     this.showModal = true;
+    this.id = food._id
     this.foodForm.patchValue(food);
   }
 
@@ -64,7 +69,7 @@ export class FoodComponent implements OnInit {
     if (this.foodForm.valid) {
       console.log('valid')
       if (this.editMode) {
-        this.foodService.addFood(this.foodForm.value).subscribe(
+        this.foodService.updateFood(this.id,this.foodForm.value,this.imageFile).subscribe(
           res => {
             console.log(res)
             this.getFood();
@@ -75,7 +80,7 @@ export class FoodComponent implements OnInit {
       }
       else {
         console.log('invalid')
-        this.foodService.addFood(this.foodForm.value).subscribe(
+        this.foodService.addFood(this.foodForm.value,this.imageFile).subscribe(
           res => {
             this.getFood();
             this.onCloseModal();
@@ -91,6 +96,44 @@ export class FoodComponent implements OnInit {
 
   onAddFood() {
     this.showModal = true;
+  }
+
+  handleFileInput(event: any) {
+
+    if (
+
+      event.target.files[0].type !== 'image/png' &&
+
+      event.target.files[0].type !== 'image/jpeg'
+
+    ) {
+
+      return;
+
+    }
+
+
+
+    if (event.target.files && event.target.files.length) {
+
+      var fr = new FileReader();
+
+      fr.onload = () => {
+
+        this.imagePicked = fr.result as string;
+
+        this.foodForm.get('image')?.updateValueAndValidity();
+
+      };
+
+      fr.readAsDataURL(event.target.files[0]);
+
+    }
+
+    this.imageFile = event.target.files[0];
+    console.log(this.imageFile);
+    console.log(this.imagePicked);
+
   }
 
 

@@ -17,17 +17,12 @@ a {
 	height: 100px;
 }
 
-
-footer{
-	padding: 7rem 0;
-	background-color: rgb(255, 255, 255);
-	color: rgb(0, 0, 0);
-  border-radius: 30px;
-  box-shadow: 0px -5px 8px 0px rgba(0, 0, 0, 0.5);
+container{
+  background-color: rgb(198, 77, 77);
 }
 
+
 .footer-start {
-  background: url('https://fringetoronto.com/sites/default/files/images/kidsfest-footer-1600x350.png') bottom left;
   background-size: cover;
   height: 200px;
   position: absolute;
@@ -36,15 +31,18 @@ footer{
   left:0px;
   min-width: 1374px;
 }
+
 footer {
-  background-color: #ffffff;
-  height: 250px;
+  background-color: black;
+  color: #ffffff;
+  height: 300px;
   font-family: trickpony;
   padding-top: 50px;
   padding-bottom: 50px;
   min-width: 1374px;
   margin: 0;
   position: relative;
+  box-shadow: 0px -5px 8px 0px rgba(0, 0, 0, 0.5);
 }
 
 	.footer-site-logo {

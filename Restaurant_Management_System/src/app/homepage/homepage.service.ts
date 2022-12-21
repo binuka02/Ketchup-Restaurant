@@ -5,8 +5,12 @@ import { HttpClient} from "@angular/common/http";
   providedIn: 'root'
 })
 export class HomepageService {
-  url = 'https://localhost:3000/homepage';
+  url = 'http://localhost:3000/food';
   constructor(private https: HttpClient){}
+
+  getBreakfastItems() {
+    return this.https.get(this.url+"?type=breakfast");
+  }
 
 
 }

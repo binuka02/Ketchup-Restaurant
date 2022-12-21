@@ -9,9 +9,18 @@ export class FoodService {
   url = 'http://localhost:3000/food';
   constructor(private http: HttpClient) { }
 
-  addFood(food: Food){
+  addFood(food: Food,imageFile: File | null){
     console.log(food);
-    return this.http.post(this.url, food);
+    const formData = new FormData();
+    formData.append('name', food.name);
+    formData.append('price', food.price.toString());
+    formData.append('description', food.description);
+    formData.append('type', food.type);
+    if(imageFile){
+      formData.append('foodImage', imageFile);
+    }
+
+    return this.http.post(this.url, formData);
   }
 
   getFoodList() {
@@ -22,7 +31,16 @@ export class FoodService {
     return this.http.delete(`${this.url}/${id}`);
   }
 
-  updateFood(food:Food){
-    return this.http.put(`${this.url}/${food._id}`, food);
+  updateFood(id:string,food:Food,imageFile: File | null){
+    const formData = new FormData();
+    formData.append('name', food.name);
+    formData.append('price', food.price.toString());
+    formData.append('description', food.description);
+    formData.append('type', food.type);
+    if(imageFile){
+      formData.append('foodImage', imageFile);
+    }
+    return this.http.patch(`${this.url}/${id}`, formData);
+
   }
 }

@@ -4,11 +4,12 @@ import { HttpClientModule } from "@angular/common/http";
 
 import { HomeNavbarComponent } from './homepage/home-navbar/home-navbar.component';
 import { CustomerLoginComponent } from './auth/customer-login-page/customer-login.component';
-import { AdminLoginComponent } from './auth/admin-login-page/admin-login.component';
+import { AdminLoginComponent } from './admin/admin-login-page/admin-login.component';
 import { SignupComponent } from './auth/signup-page/signup-page.component';
 import { HomeBodyComponent } from './homepage/home-body/home-body.component';
 import { FooterComponent } from './footer/footer.component';
 import { FoodComponent } from './admin/food/food.component';
+import { BreakfastComponent } from './homepage/breakfast/breakfast.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -39,7 +40,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     SignupComponent,
     HomeBodyComponent,
     FooterComponent,
-    FoodComponent
+    FoodComponent,
+    BreakfastComponent
   ],
   imports: [
     BrowserModule,
