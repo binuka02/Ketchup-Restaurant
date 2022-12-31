@@ -4,6 +4,10 @@
   height: 500px;
 }
 
+.mdb-carousel-item{
+  height: 200px;
+}
+
 img {
   height: 100%;
   width: 100%;
@@ -50,7 +54,7 @@ img {
   margin-bottom: 0px;
 }
 
-#thirdrow{
+#menu{
   margin-top: 50px;
   padding-left: 50px;
   padding-right: 50px;
@@ -95,9 +99,9 @@ img {
   margin-top: 0px;
 }
 
-#weddings_and_events{
-  font-family: 'Mongolian Baiti';
-  font-size: 50px;
+#ketchup{
+  font-family: 'Harlow Solid Italic', sans-serif;
+  font-size: 70px;
   font-weight: bold;
 }
 
@@ -229,7 +233,8 @@ body {
 }
 
 .profile-card-6 {
-  max-width: 300px;
+  max-width: 200px;
+  height: 300px;
   background-color: #FFF;
   border-radius: 5px;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);

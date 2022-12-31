@@ -12,5 +12,25 @@ export class HomepageService {
     return this.https.get(this.url+"?type=breakfast");
   }
 
+  getLunchItems() {
+    return this.https.get(this.url+"?type=lunch");
+  }
+
+  getDinnerItems() {
+    return this.https.get(this.url+"?type=dinner");
+  }
+
+  getDrinkItems() {
+    return this.https.get(this.url+"?type=drink");
+  }
+
+  getDessertItems() {
+    return this.https.get(this.url+"?type=dessert");
+  }
+
+  getSoupItems() {
+    return this.https.get(this.url+"?type=soup");
+  }
+
 
 }

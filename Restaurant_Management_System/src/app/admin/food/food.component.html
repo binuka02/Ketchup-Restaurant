@@ -3,7 +3,7 @@
       <div class="col-md-6">
           <h2>Food Management</h2>
       </div>
-      <div class="col ml-auto text-right">
+      <div class="col ml-auto text-right" id="add_food">
           <button type="button" class="btn btn-outline-success" (click)="onAddFood()">Add Food</button>
       </div>
   </div>
@@ -13,10 +13,9 @@
           <div class="card mb-3">
               <div class="card-body">
                   <h5 class="card-title">{{item.name}}</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">{{item.price}}</h6>
-                  <span class="badge" [ngClass]="{'badge-success': item.description =='Design', 'badge-danger' : item.description !='Design'}">{{item.description}}</span>
-                  <hr>
-                  <button type="button" class="btn btn-sm btn-outline-primary mr-2" (click)="onEditFood(item)">Edit</button>
+                  <h6 class="card-subtitle mb-2 text-muted">${{item.price}}</h6>
+                  <p class="item-description text-muted">{{item.description}}</p>
+                  <button type="button" class="btn btn-sm btn-outline-primary mr-2" (click)="onEditFood(item)">Edit</button>&nbsp;
                   <button type="button" class="btn btn-sm btn-outline-danger" (click)="onDeleteFood(item._id)">Delete</button>
               </div>
           </div>
@@ -38,27 +37,27 @@
                   <div class="form-group">
                       <label>Enter Name</label>
                       <input type="text" class="form-control" formControlName="name">
-                      <small *ngIf="!foodForm.get('name')?.valid && foodForm.get('name')?.touched" class="form-text text-danger">Please Enter Name.</small>
+                      <small *ngIf="!foodForm.get('name')?.valid && foodForm.get('name')?.touched" class="form-text text-danger">Please Enter Name</small>
                   </div>
                   <div class="form-group">
                       <label>Enter price</label>
                       <input type="text" class="form-control" formControlName="price">
-                      <small *ngIf="!foodForm.get('position')?.valid && foodForm.get('position')?.touched"class="form-text text-danger">Please Enter price.</small>
+                      <small *ngIf="!foodForm.get('position')?.valid && foodForm.get('position')?.touched"class="form-text text-danger">Please Enter Price</small>
                   </div>
                   <div class="form-group">
                       <label>Enter descripton</label>
                       <input type="text" class="form-control" formControlName="description">
-                      <small *ngIf="!foodForm.get('description')?.valid && foodForm.get('description')?.touched"class="form-text text-danger">Please Enter description.</small>
+                      <small *ngIf="!foodForm.get('description')?.valid && foodForm.get('description')?.touched"class="form-text text-danger">Please Enter Description</small>
                   </div>
                   <div class="form-group">
                     <label>Enter Type</label>
                     <input type="text" class="form-control" formControlName="type">
-                    <small *ngIf="!foodForm.get('type')?.valid && foodForm.get('type')?.touched" class="form-text text-danger">Please Enter Name.</small>
+                    <small *ngIf="!foodForm.get('type')?.valid && foodForm.get('type')?.touched" class="form-text text-danger">Please Enter Type</small>
                 </div>
                 <div class="form-group">
-                  <label>Enter Name</label>
+                  <label>Insert Image</label>
                   <input type="file" class="form-control" formControlName="image" (change)="handleFileInput($event)">
-                  <small *ngIf="!foodForm.get('image')?.valid && foodForm.get('image')?.touched" class="form-text text-danger">Please Enter Name.</small>
+                  <small *ngIf="!foodForm.get('image')?.valid && foodForm.get('image')?.touched" class="form-text text-danger">Please Select image</small>
               </div>
               </div>
               <div class="modal-footer">

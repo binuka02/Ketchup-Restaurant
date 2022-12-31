@@ -66,6 +66,7 @@ export class FoodComponent implements OnInit {
   onFoodSubmit() {
     console.log('inside onFoodSubmit')
     console.log('this.foodForm.value: ' + this.foodForm.value)
+
     if (this.foodForm.valid) {
       console.log('valid')
       if (this.editMode) {
@@ -87,6 +88,7 @@ export class FoodComponent implements OnInit {
           }, err => console.log(err))
       }
     }
+    // this.foodForm.reset();
   }
 
   onCloseModal() {
@@ -99,42 +101,24 @@ export class FoodComponent implements OnInit {
   }
 
   handleFileInput(event: any) {
-
     if (
-
       event.target.files[0].type !== 'image/png' &&
-
       event.target.files[0].type !== 'image/jpeg'
-
     ) {
-
       return;
-
     }
 
-
-
     if (event.target.files && event.target.files.length) {
-
       var fr = new FileReader();
-
       fr.onload = () => {
-
         this.imagePicked = fr.result as string;
-
         this.foodForm.get('image')?.updateValueAndValidity();
-
       };
-
       fr.readAsDataURL(event.target.files[0]);
-
     }
 
     this.imageFile = event.target.files[0];
     console.log(this.imageFile);
     console.log(this.imagePicked);
-
   }
-
-
 }

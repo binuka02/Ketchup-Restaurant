@@ -2,14 +2,13 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from "@angular/common/http";
 
-import { HomeNavbarComponent } from './homepage/home-navbar/home-navbar.component';
 import { CustomerLoginComponent } from './auth/customer-login-page/customer-login.component';
 import { AdminLoginComponent } from './admin/admin-login-page/admin-login.component';
 import { SignupComponent } from './auth/signup-page/signup-page.component';
 import { HomeBodyComponent } from './homepage/home-body/home-body.component';
 import { FooterComponent } from './footer/footer.component';
 import { FoodComponent } from './admin/food/food.component';
-import { BreakfastComponent } from './homepage/breakfast/breakfast.component';
+import { MenuComponent } from './homepage/menu/menu.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -30,18 +29,21 @@ import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CartComponent } from './cart/cart.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeNavbarComponent,
     AdminLoginComponent,
     CustomerLoginComponent,
     SignupComponent,
     HomeBodyComponent,
     FooterComponent,
     FoodComponent,
-    BreakfastComponent
+    MenuComponent,
+    CartComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

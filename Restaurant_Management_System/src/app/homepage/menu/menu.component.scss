@@ -32,7 +32,7 @@ header {
 	min-height:120px;
 	padding:50px 0;
 	color:#fff;
-	    background: #383838 url(https://www.athenadesignstudio.com/plugins/switch/images/bg.jpg) no-repeat center center;
+	background: #383838 url(https://www.athenadesignstudio.com/plugins/switch/images/bg.jpg) no-repeat center center;
 	margin-bottom:30px
 }
 
@@ -93,8 +93,13 @@ body {
     perspective: 1000;
 }
 
+.col-md-3{
+  height: 650px;
+}
+
 .profile-card-4 {
   max-width: 300px;
+  height: 650px;
   background-color: #FFF;
   border-radius: 5px;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
@@ -102,10 +107,13 @@ body {
   position: relative;
   margin: 10px auto;
   cursor: pointer;
+  margin-bottom: 500px;
 }
 
 .profile-card-4 img {
   transition: all 0.25s linear;
+  height: 250px;
+  width: 270px;
 }
 
 .profile-card-4 .profile-content {
@@ -156,6 +164,7 @@ body {
 
 .profile-card-4 .profile-overview {
   padding: 15px 0px;
+  margin-bottom: 10px;
 }
 
 
@@ -164,6 +173,7 @@ body {
   font-weight: bold;
 
 }
+
 
 .profile-card-4 .profile-content::before {
   content: "";
@@ -186,6 +196,10 @@ body {
   box-shadow: 0px 8px 8px -6px rgba(0,0,0,.5);
 }
 
+.col-xs-4{
+  // margin-bottom: 100px;
+}
+
 //Button Style
 
 .button-hover-addcart {
@@ -199,7 +213,7 @@ body {
   width: 180px;
   transition: all 0.2s ease-in-out;
   position: relative;
-
+  margin-bottom: 10px;
 }
 
 .button-hover-addcart span {
