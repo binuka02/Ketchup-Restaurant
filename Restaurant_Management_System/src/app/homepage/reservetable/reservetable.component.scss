@@ -1,0 +1,91 @@
+h3{
+  font-family: elephant;
+  font-weight: bold;
+  text-align: center;
+  font-size: 50px;
+  margin-top: 50px;
+}
+
+#reserve{
+  background-color: #d6d5d0;
+  margin-left: 100px;
+  margin-right: 100px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  border-radius: 30px;
+}
+
+form{
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+///
+///
+///
+
+
+
+
+
+
+
+#full{
+  display: grid;
+  justify-content:center;
+  align-content: center;
+}
+
+a{
+  text-decoration: none;
+}
+
+.user-login-icon{
+  align-content: right;
+  color: black;
+  margin-left: 100px;
+}
+
+.form-control{
+  height: 20px;
+  border-radius: 20px;
+}
+
+
+
+#right{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+img{
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.btnlogin{
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  height: 50px;
+  width: 100%;
+  background-color: black;
+  color: white;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.btnlogin:hover{
+  background-color: white;
+  border: 1px solid;
+  color: black;
+}
+
+#datepicker{
+  height: 50px;
+  margin-bottom: 15px;
+}
+
+#btn{
+  border-radius: 15px;
+}

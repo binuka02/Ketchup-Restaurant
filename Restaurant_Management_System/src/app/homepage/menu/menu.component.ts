@@ -4,8 +4,6 @@ import { ActivatedRoute } from "@angular/router";
 import { Food } from "src/app/admin/food.model";
 import { AppService } from "src/app/app.service";
 import { HomepageService } from "../homepage.service";
-// import { Food } from './app/admin/food.model';
-// import { FoodService } from '../food.service';
 
 @Component({
   selector: 'app-menu',

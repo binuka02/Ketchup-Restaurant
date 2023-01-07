@@ -19,6 +19,17 @@
   margin-left: 80px;
 }
 
+.navbar-brand:hover {
+  -ms-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(0.95);
+  color: white;
+}
+
+.navbar-brand:after {
+  color: white;
+}
+
 #navbar-content{
   justify-content: center;
 }

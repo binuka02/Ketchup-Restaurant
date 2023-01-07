@@ -7,11 +7,12 @@ import { NavbarComponent } from '../navbar/navbar.component';
 import { FooterComponent } from '../footer/footer.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { HomepageComponent } from './homepage.component';
+import { ReservetableComponent } from './reservetable/reservetable.component';
 
 
 
 @NgModule({
-  declarations: [HomeBodyComponent,MenuComponent,NavbarComponent,FooterComponent,HomepageComponent],
+  declarations: [HomeBodyComponent,MenuComponent,NavbarComponent,FooterComponent,HomepageComponent,ReservetableComponent],
   imports: [
     CommonModule,
 
