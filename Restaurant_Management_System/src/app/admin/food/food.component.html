@@ -1,4 +1,4 @@
-<div class="container py-3">
+<div class="container py-3"   id="foodmanagement">
   <div class="row">
       <div class="col-md-6">
           <h2>Food Management</h2>
@@ -12,15 +12,21 @@
       <div class="col-md-4" *ngFor="let item of food">
           <div class="card mb-3">
               <div class="card-body">
+                  <h6 class="card-subtitle mb-2 text-info">{{item.type[0].toUpperCase()+item.type.slice(1)}}</h6>
+                  <br>
                   <h5 class="card-title">{{item.name}}</h5>
                   <h6 class="card-subtitle mb-2 text-muted">${{item.price}}</h6>
                   <p class="item-description text-muted">{{item.description}}</p>
-                  <button type="button" class="btn btn-sm btn-outline-primary mr-2" (click)="onEditFood(item)">Edit</button>&nbsp;
-                  <button type="button" class="btn btn-sm btn-outline-danger" (click)="onDeleteFood(item._id)">Delete</button>
+                  <div class="btns">
+                    <button type="button" class="btn btn-sm btn-outline-primary mr-2" (click)="onEditFood(item)">Edit</button>&nbsp;
+                    <button type="button" class="btn btn-sm btn-outline-danger" (click)="onDeleteFood(item._id)">Delete</button>
+                  </div>
               </div>
           </div>
       </div>
   </div>
+
+  <a href="#foodmanagement"><i class="fa-solid fa-circle-up"></i></a>
 </div>
 
 <div class="modal fade show" [class.show]="showModal">
@@ -51,7 +57,14 @@
                   </div>
                   <div class="form-group">
                     <label>Enter Type</label>
-                    <input type="text" class="form-control" formControlName="type">
+                    <select class="form-control" formControlName="type">
+                      <option value="breakfast">breakfast</option>
+                      <option value="lunch">lunch</option>
+                      <option value="dinner">dinner</option>
+                      <option value="drinks">drinks</option>
+                      <option value="desserts">desserts</option>
+                      <option value="soups">soups</option>
+                    </select>
                     <small *ngIf="!foodForm.get('type')?.valid && foodForm.get('type')?.touched" class="form-text text-danger">Please Enter Type</small>
                 </div>
                 <div class="form-group">

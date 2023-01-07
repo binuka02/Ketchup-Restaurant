@@ -21,15 +21,15 @@ export class HomepageService {
   }
 
   getDrinkItems() {
-    return this.https.get(this.url+"?type=drink");
+    return this.https.get(this.url+"?type=drinks");
   }
 
   getDessertItems() {
-    return this.https.get(this.url+"?type=dessert");
+    return this.https.get(this.url+"?type=desserts");
   }
 
   getSoupItems() {
-    return this.https.get(this.url+"?type=soup");
+    return this.https.get(this.url+"?type=soups");
   }
 
 

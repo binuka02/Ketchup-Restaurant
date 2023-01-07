@@ -38,12 +38,12 @@ import { NavbarComponent } from './navbar/navbar.component';
     AdminLoginComponent,
     CustomerLoginComponent,
     SignupComponent,
-    HomeBodyComponent,
-    FooterComponent,
+
+
     FoodComponent,
-    MenuComponent,
+
     CartComponent,
-    NavbarComponent
+
   ],
   imports: [
     BrowserModule,

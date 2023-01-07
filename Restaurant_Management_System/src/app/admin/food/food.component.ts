@@ -4,7 +4,7 @@ import { Food } from '../food.model';
 import { FoodService } from '../food.service';
 
 @Component({
-  selector: 'app-food',
+  selector: 'admin-food',
   templateUrl: './food.component.html',
   styleUrls: ['./food.component.scss']
 })
@@ -80,7 +80,7 @@ export class FoodComponent implements OnInit {
         )
       }
       else {
-        console.log('invalid')
+        console.log('update')
         this.foodService.addFood(this.foodForm.value,this.imageFile).subscribe(
           res => {
             this.getFood();
@@ -98,6 +98,8 @@ export class FoodComponent implements OnInit {
 
   onAddFood() {
     this.showModal = true;
+    this.editMode = false;
+    this.foodForm.reset();
   }
 
   handleFileInput(event: any) {

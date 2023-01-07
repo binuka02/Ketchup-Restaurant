@@ -14,7 +14,7 @@ import { HomepageService } from "../homepage.service";
 })
 
 export class MenuComponent implements OnInit{
-  menu = "breakfast"
+  menu = ""
   food: Food[] = [];
    constructor(private homePageService:HomepageService,private route:ActivatedRoute,private appService:AppService){}
 
@@ -45,21 +45,21 @@ export class MenuComponent implements OnInit{
       })
   }
 
-  if(this.menu == "drink") {
+  if(this.menu == "drinks") {
     this.homePageService.getDrinkItems().subscribe((res:any) => {
       console.log(res);
       this.food = res;
     })
 }
 
-if(this.menu == "dessert") {
+if(this.menu == "desserts") {
   this.homePageService.getDessertItems().subscribe((res:any) => {
     console.log(res);
     this.food = res;
   })
 }
 
-if(this.menu == "soup") {
+if(this.menu == "soups") {
   this.homePageService.getSoupItems().subscribe((res:any) => {
     console.log(res);
     this.food = res;
