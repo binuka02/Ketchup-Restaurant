@@ -1,7 +1,7 @@
 <div class="container" id="container">
   <div class="row">
     <div class="col-12">
-      <h4 *ngIf="cart.length===0">NO items</h4>
+      <h4 *ngIf="cart.length===0">Sorry, You don't have any items in the cart!</h4>
       <table class="table table-image" *ngIf="cart.length>0">
         <thead>
           <tr>
@@ -20,13 +20,18 @@
               <img [src]="item.imageUrl" class="img-fluid img-thumbnail" alt="No image found">
             </td>
             <td>{{item.name}}</td>
-            <td>{{item.price}}</td>
-            <td><span role="button" (click)="increaseQuantity(i)">+</span>{{item.quantity}}<span role="button" (click)="decreaseQuantity(i)">-</span></td>
+            <td>${{item.price}}</td>
+            <td><i class="fa-solid fa-circle-minus fa-2xs"  (click)="decreaseQuantity(i)" id="quantitychange"></i>&nbsp;{{item.quantity}}&nbsp;<i class="fa-solid fa-circle-plus fa-2xs"(click)="increaseQuantity(i)" id="quantitychange"></i></td>
+
             <td><i class="fa fa-trash" id="delete"  aria-hidden="true" role="button" (click)="deleteItem(i)"></i></td>
           </tr>
         </tbody>
       </table>
-      <h4 *ngIf="cart.length>0">Total: {{totalPrice}}</h4>
+      <h4 *ngIf="cart.length>0" id="total">Total: {{totalPrice}}</h4>
+
+      <div id="btndiv">
+        <button type="submit" class="btnlogin mt-3 mb-5" id="btn" *ngIf="cart.length>0" [routerLink]="['/order']">Place Order&nbsp;<i class="fa-sharp fa-solid fa-arrow-right"></i></button>
+      </div>
     </div>
   </div>
 </div>

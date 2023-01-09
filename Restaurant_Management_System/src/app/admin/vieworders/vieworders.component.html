@@ -1,0 +1,45 @@
+
+<div class="container py-3" id="vieworders">
+  <div class="row">
+      <div class="col-md-6">
+          <h2>View Orders</h2>
+      </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-12">
+      <!-- <h4 *ngIf="cart.length===0">NO items</h4> -->
+      <table class="table table-image" *ngIf="orders.length>0">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Contact Number</th>
+            <th scope="col">Address</th>
+            <th scope="col">City</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Items</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of orders;index as i">
+            <th scope="row">{{i+1}}</th>
+            <td>{{item.firstname}}</td>
+            <td>{{item.lastname}}</td>
+            <td>{{item.email}}</td>
+            <td>{{item.phone}}</td>
+            <td>{{item.address}}</td>
+            <td>{{item.city}}</td>
+            <td>{{item.amount}}</td>
+            <td>{{item.items}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+</div>

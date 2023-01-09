@@ -29,6 +29,10 @@ thead{
   }
 img{
   transition: 0.5s all ease-in-out;
+  width: 150px;
+  height: 150px;
+  border-style: none;
+  border-radius: 15px;
 }
   img:hover {
     transform: scale(1.04);
@@ -124,4 +128,50 @@ i{
   td{
     font-size: 13px;
   }
+}
+
+#quantitychange{
+  size: 2px;
+}
+
+#quantitychange:hover{
+  transform: scale(1.2);
+}
+
+#total{
+  text-align: right;
+  margin-bottom: 0px;
+}
+
+#btn{
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  height: 35px;
+  width: 130px;
+  background-color: black;
+  color: white;
+  border-radius: 4px;
+  font-weight: bold;
+  border-radius: 15px;
+
+}
+
+#btn:hover{
+  background-color: white;
+  border: 1px solid;
+  color: black;
+}
+
+#btndiv{
+  text-align: right;
+  padding-top: 0px;
+}
+
+.fa-arrow-right{
+  color: #fff;
+}
+
+#btn:hover .fa-arrow-right{
+  color: black;
 }

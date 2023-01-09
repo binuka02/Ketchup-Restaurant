@@ -8,6 +8,8 @@ import { FooterComponent } from '../footer/footer.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { HomepageComponent } from './homepage.component';
 import { ReservetableComponent } from './reservetable/reservetable.component';
+import { CartComponent } from '../cart/cart.component';
+import { OrderComponent } from '../order/order.component';
 
 
 
@@ -28,7 +30,10 @@ import { ReservetableComponent } from './reservetable/reservetable.component';
           {path:"drinks",component:MenuComponent},
           {path:"desserts",component:MenuComponent},
           {path:"soups",component:MenuComponent},
-          {path:"cart",component:MenuComponent}
+          {path:"cart",component:CartComponent},
+          {path:"order",component:OrderComponent},
+          {path:"reservetable",component:ReservetableComponent},
+
         ]
       }
     ])

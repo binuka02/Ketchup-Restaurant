@@ -54,7 +54,7 @@ img {
   margin-bottom: 0px;
 }
 
-#menu{
+#menus{
   margin-top: 50px;
   padding-left: 50px;
   padding-right: 50px;
@@ -549,4 +549,13 @@ html {
 .card__title{
   font-size: 30px;
   font-weight: bold;
+}
+
+#menu{
+  font-family: 'sans-serif';
+  font-size: 100px;
+  font-weight: bold;
+  text-align: center;
+  color: #091745;
+  margin-top: 50px;
 }
