@@ -75,6 +75,8 @@ router.post('/',upload.single("foodImage"), (req, res) => {
         if(err){
             console.log('Error in Post Data ' + err);
         } else {
+            const io = req.app.get("io")
+            io.emit("foodAdded", doc)
             res.send(doc);
         }
     })
@@ -97,6 +99,8 @@ router.patch('/:id',upload.single("foodImage"), (req, res) => {
             if(err){
                 console.log('Error in Update food by ID ' + err);
             } else {
+                const io = req.app.get("io")
+            io.emit("foodUpdated", doc)
                 res.send(doc);
             }
         })
@@ -112,6 +116,8 @@ router.delete('/:id', (req, res) => {
             if(err){
                 console.log('Error in DELETE food by ID ' + err);
             } else {
+                const io = req.app.get("io")
+            io.emit("foodDeleted", doc)
                 res.send(doc);
             }
         })

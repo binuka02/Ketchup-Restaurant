@@ -47,7 +47,7 @@ quantity:item.quantity
     }
     console.log("submit")
     console.log(this.orderForm.value,this.cartNew)
-    this.http.post('http://localhost:3000/order',{...this.orderForm.value,items:this.cartNew}).subscribe((res:any) => {
+    this.http.post('http://localhost:3000/order',{...this.orderForm.value,items:this.cartNew,amount:this.totalPriceNumber}).subscribe((res:any) => {
       console.log(res)
     } )
 

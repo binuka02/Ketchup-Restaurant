@@ -10,13 +10,13 @@ import { AppService } from 'src/app/app.service';
 })
 export class ReservetableComponent implements OnInit {
   tableForm : FormGroup = new FormGroup({
-    firstname : new FormControl(''),
-    lastname : new FormControl(''),
+    firstName : new FormControl(''),
+    lastName : new FormControl(''),
     email : new FormControl(''),
     phone : new FormControl(''),
     date : new FormControl(''),
     time : new FormControl(''),
-    seatscount : new FormControl('')
+    seatcount : new FormControl('')
   });
 
 
@@ -34,6 +34,7 @@ export class ReservetableComponent implements OnInit {
     this.http.post('http://localhost:3000/table',{...this.tableForm.value}).subscribe((res:any) => {
       console.log(res)
     } )
+    this.tableForm.reset();
   }
 
 }

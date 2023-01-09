@@ -19,7 +19,6 @@ originalPrice:number[] =[];
     this.cart = this.appService.getCart();
     this.cart.map((item:Food) => {
       this.originalPrice.push(item.price);
-      item.quantity = 1;
       this.totalPriceNumber = this.totalPriceNumber+item.price;
       this.totalPrice = this.totalPriceNumber.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
     })
@@ -44,6 +43,10 @@ originalPrice:number[] =[];
       this.totalPrice = this.totalPriceNumber.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
     })
 
+    console.log(this.cart);
+
+    this.appService.allCartUpdate(this.cart);
+
 
   }
 
@@ -56,6 +59,7 @@ originalPrice:number[] =[];
       this.totalPriceNumber = this.totalPriceNumber+item.price;
       this.totalPrice = this.totalPriceNumber.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
     })
+    this.appService.allCartUpdate(this.cart);
    return;
     }
 
@@ -66,11 +70,12 @@ originalPrice:number[] =[];
       this.totalPriceNumber = this.totalPriceNumber+item.price;
       this.totalPrice = this.totalPriceNumber.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
     })
-
+    this.appService.allCartUpdate(this.cart);
   }
 
   deleteItem(index:number){
     this.appService.deleteCart(index);
     this.originalPrice.splice(index,1);
+    this.appService.allCartUpdate(this.cart);
   }
 }

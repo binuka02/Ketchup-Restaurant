@@ -36,6 +36,11 @@ cartChange = new Subject<Food[]>();
     localStorage.setItem('cart', JSON.stringify(this.cart));
   }
 
+allCartUpdate(cart:Food[]){
+this.cart = cart;
+localStorage.setItem('cart', JSON.stringify(this.cart));
+}
+
   chartChangeListner(){
     return this.cartChange.asObservable();
   }

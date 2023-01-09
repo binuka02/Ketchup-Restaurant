@@ -40,17 +40,12 @@ import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
   declarations: [
     AppComponent,
     AdminLoginComponent,
-
-
-
-
     FoodComponent,
-
     CartComponent,
-     OrderComponent,
-     ViewordersComponent,
-     ViewtableComponent,
-     AdminHomeComponent,
+    OrderComponent,
+    ViewordersComponent,
+    ViewtableComponent,
+    AdminHomeComponent,
 
   ],
   imports: [

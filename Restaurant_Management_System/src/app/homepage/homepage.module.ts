@@ -10,6 +10,7 @@ import { HomepageComponent } from './homepage.component';
 import { ReservetableComponent } from './reservetable/reservetable.component';
 import { CartComponent } from '../cart/cart.component';
 import { OrderComponent } from '../order/order.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -17,7 +18,7 @@ import { OrderComponent } from '../order/order.component';
   declarations: [HomeBodyComponent,MenuComponent,NavbarComponent,FooterComponent,HomepageComponent,ReservetableComponent],
   imports: [
     CommonModule,
-
+ReactiveFormsModule,
     RouterModule.forChild([
       {
         path:"",
