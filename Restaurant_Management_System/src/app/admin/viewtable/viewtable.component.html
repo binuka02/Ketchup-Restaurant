@@ -1,1 +1,43 @@
-<p>viewtable works!</p>
+
+<div class="container py-3" id="vieworders">
+  <div class="row">
+      <div class="col">
+          <h2>View Table Reservations</h2>
+      </div>
+  </div>
+  <hr>
+  <br>
+  <div class="row">
+    <div class="col-12">
+      <!-- <h4 *ngIf="cart.length===0">NO items</h4> -->
+      <table class="table table-image" *ngIf="table.length>0">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Date</th>
+            <th scope="col">Time</th>
+            <th scope="col">Email</th>
+            <th scope="col">Contact Number</th>
+            <th scope="col">Number of Seats</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of table;index as i">
+            <th scope="row">{{i+1}}</th>
+            <td>{{item.firstName}}</td>
+            <td>{{item.lastName}}</td>
+            <td>{{item.date}}</td>
+            <td>{{item.time}}</td>
+            <td>{{item.email}}</td>
+            <td>{{item.phone}}</td>
+            <td>{{item.seatcount}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+</div>

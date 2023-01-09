@@ -11,5 +11,9 @@ router .post('/', async (req, res) => {
     res.status(201).json({msg: "Table Booked"});
 });
 
+router.get('/', async(req, res) => {
+    const table = await Table.find();
+    res.status(200).json(table);
+});
 
 module.exports = router;

@@ -5,7 +5,6 @@ import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 import { FoodComponent } from './admin/food/food.component';
 import { ViewordersComponent } from './admin/vieworders/vieworders.component';
 import { ViewtableComponent } from './admin/viewtable/viewtable.component';
-import { ChatComponent } from './chat/chat.component';
 
 const routes: Routes = [
 
@@ -15,7 +14,6 @@ const routes: Routes = [
  { path: 'admin-login', component: AdminLoginComponent },
  { path: 'view-orders', component: ViewordersComponent},
  { path: 'view-table', component: ViewtableComponent},
- { path: 'chat', component: ChatComponent},
 
 //  { path: 'breakfast', component: MenuComponent},
 //  { path: 'lunch', component:MenuComponent},

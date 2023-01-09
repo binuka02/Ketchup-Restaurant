@@ -1,11 +1,12 @@
 
 <div class="container py-3" id="vieworders">
   <div class="row">
-      <div class="col-md-6">
+      <div class="col">
           <h2>View Orders</h2>
       </div>
   </div>
   <hr>
+  <br>
   <div class="row">
     <div class="col-12">
       <!-- <h4 *ngIf="cart.length===0">NO items</h4> -->
@@ -33,9 +34,9 @@
             <td>{{item.phone}}</td>
             <td>{{item.address}}</td>
             <td>{{item.city}}</td>
-            <td>{{item.amount}}</td>
+            <td>${{item.amount}}</td>
             <td>
-              <ul>
+              <ul >
                 <li *ngFor="let item of item.items">{{item.name}} - {{item.quantity}} (${{item.price}})</li>
               </ul>
             </td>
