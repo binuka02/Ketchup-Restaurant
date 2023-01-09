@@ -30,7 +30,7 @@ this.http.post("http://localhost:3000/admin",this.loginform.value).pipe(catchErr
 ).subscribe((res:any)=>{
   console.log(res);
   if(res.msg=="Login Success"){
-    this.router.navigate(['/admin-food']);
+    this.router.navigate(['/admin-home']);
   }
   else{
     alert("Login Failed");

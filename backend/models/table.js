@@ -5,8 +5,8 @@ const Table = mongoose.model('Table', {
     lastName: {type: String},
     email: {type: String},
     phone: {type: Number},
-    date: {type: Date},
-    time: {type: TimeRanges},
+    date: {type: String},
+    time: {type: String},
     seatcount: {type: Number}
 })
 

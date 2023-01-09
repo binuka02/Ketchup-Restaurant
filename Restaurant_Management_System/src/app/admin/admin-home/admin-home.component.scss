@@ -1,0 +1,48 @@
+#ketchup{
+  font-family: 'sans-serif';
+  font-size: 80px;
+  font-weight: bold;
+  text-align: center;
+  color: #000000;
+  margin-top: 50px;
+}
+
+#admin{
+  font-family: 'sans-serif';
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  color: #000000;
+
+}
+
+#btnrow{
+  margin-top: 100px;
+  text-align: center;
+  padding-left: 50px;
+}
+
+
+#btn {
+background-color: #091745;
+color: white;
+font-family: 'elephant';
+font-size: 20px;
+font-weight: bold;
+border-radius: 10px;
+padding: 10px 20px;
+height: 100px;
+width: 80%;
+
+}
+
+#btn:hover {
+  scale: 1.1;
+  color: #e6b115;
+}
+
+#btn:hover .btn-text {
+
+}
+
+

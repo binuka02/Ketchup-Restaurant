@@ -34,6 +34,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { OrderComponent } from './order/order.component';
 import { ViewordersComponent } from './admin/vieworders/vieworders.component';
 import { ViewtableComponent } from './admin/viewtable/viewtable.component';
+import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { ViewtableComponent } from './admin/viewtable/viewtable.component';
      OrderComponent,
      ViewordersComponent,
      ViewtableComponent,
+     AdminHomeComponent,
 
   ],
   imports: [

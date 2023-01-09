@@ -34,7 +34,11 @@
             <td>{{item.address}}</td>
             <td>{{item.city}}</td>
             <td>{{item.amount}}</td>
-            <td>{{item.items}}</td>
+            <td>
+              <ul>
+                <li *ngFor="let item of item.items">{{item.name}} - {{item.quantity}} (${{item.price}})</li>
+              </ul>
+            </td>
           </tr>
         </tbody>
       </table>

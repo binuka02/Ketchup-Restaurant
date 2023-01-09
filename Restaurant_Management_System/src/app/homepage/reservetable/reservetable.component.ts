@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { AppService } from 'src/app/app.service';
 
 @Component({
   selector: 'app-reservetable',
@@ -17,9 +19,21 @@ export class ReservetableComponent implements OnInit {
     seatscount : new FormControl('')
   });
 
-  constructor() { }
+
+  constructor(private appService:AppService,private http:HttpClient) { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit(){
+    if(this.tableForm.invalid){
+      return;
+    }
+    console.log("submit")
+    console.log(this.tableForm.value)
+    this.http.post('http://localhost:3000/table',{...this.tableForm.value}).subscribe((res:any) => {
+      console.log(res)
+    } )
   }
 
 }

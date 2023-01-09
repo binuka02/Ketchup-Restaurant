@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Food } from '../admin/food.model';
 import { AppService } from '../app.service';
+import { OrderService } from './order.service';
 
 @Component({
   selector: 'app-order',
@@ -23,7 +24,7 @@ orderForm:FormGroup = new FormGroup({
   city: new FormControl('')
 
 });
-  constructor(private appService:AppService,private http:HttpClient) { }
+  constructor(private OrderService:OrderService, private appService:AppService,private http:HttpClient) { }
 
   ngOnInit(): void {
     this.cart = this.appService.getCart()
@@ -49,6 +50,23 @@ quantity:item.quantity
     this.http.post('http://localhost:3000/order',{...this.orderForm.value,items:this.cartNew}).subscribe((res:any) => {
       console.log(res)
     } )
+
+    let user = {
+      name: this.orderForm.value.firstname,
+      email: this.orderForm.value.email,
+      subject: "Order Confirmation",
+      text: "Your order has been placed successfully."
+    }
+
+    this.OrderService.sendEmail("http://localhost:3000/sendemail",user).subscribe(
+      (data: any) => {
+        let res:any = data;
+        console.log(res);
+      },
+      (error: any) => {
+        console.log(error);
+      }
+    );
   }
 
 }
