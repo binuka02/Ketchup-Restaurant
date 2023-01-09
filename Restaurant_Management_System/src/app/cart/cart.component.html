@@ -1,7 +1,7 @@
 <div class="container" id="container">
   <div class="row">
     <div class="col-12">
-      <h4 *ngIf="cart.length===0">Sorry, You don't have any items in the cart!</h4>
+      <h4 id="emptycart" *ngIf="cart.length===0"><i class="fa-light fa-cart-xmark"></i>Sorry, You don't have any items in the cart!</h4>
       <table class="table table-image" *ngIf="cart.length>0">
         <thead>
           <tr>
