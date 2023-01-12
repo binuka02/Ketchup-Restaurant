@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const Order = require('../models/order.js');
+const sendEmail = require('../sendEmail.js');
 
 
 router.post('/', async(req, res) => {
@@ -9,6 +10,13 @@ router.post('/', async(req, res) => {
     const amountNew = +amount
     console.log(firstname, lastname, email, phone, address, city, amount, items)
     const order = await Order.create({firstname: firstname, lastname: lastname, email: email, phone: phone, address: address, city: city, amount: amountNew, items: items});
+    const user = {
+        email,
+        name: firstname + " " + lastname,
+    }
+    await sendEmail(user,info => {
+        console.log(`The mail has beed send and the id is ${info.messageId}`);
+     })
     res.status(201).json({msg:"Order Success"});
 });
 

@@ -35,6 +35,9 @@ import { OrderComponent } from './order/order.component';
 import { ViewordersComponent } from './admin/vieworders/vieworders.component';
 import { ViewtableComponent } from './admin/viewtable/viewtable.component';
 import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+
+import { NgxPayPalModule } from 'ngx-paypal';
 
 @NgModule({
   declarations: [
@@ -46,6 +49,8 @@ import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
     ViewordersComponent,
     ViewtableComponent,
     AdminHomeComponent,
+    CheckoutComponent,
+
 
   ],
   imports: [
@@ -68,7 +73,8 @@ import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
     MdbValidationModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPayPalModule
   ],
   providers: [],
   bootstrap: [AppComponent]

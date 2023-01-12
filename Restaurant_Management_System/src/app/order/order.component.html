@@ -19,7 +19,7 @@
       <div class="col-5" id="right">
 
 
-      <form [formGroup]="orderForm" (submit)="onSubmit()">
+      <form [formGroup]="orderForm" (submit)="onSubmit()" action="/pay">
 
           <div class="row">
             <div class="col-lg-5">
@@ -44,7 +44,8 @@
 
         <div class="form-row">
           <div class="col-lg-10">
-            <input type="email" placeholder="Email" class="form-control my-3 p-4" formControlName="email"required email>
+            <input type="email" placeholder="Email" class="form-control my-3 p-4" formControlName="email" required>
+
           </div>
         </div>
 

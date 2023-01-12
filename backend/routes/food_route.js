@@ -18,7 +18,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 
-//GET Single food
+//GET food
 router.get('/:id', (req, res) => {
     if(ObjectId.isValid(req.params.id)){
         Food.findById(req.params.id, (err, doc) => {
@@ -34,15 +34,6 @@ router.get('/:id', (req, res) => {
 })
 
 //GET API
-// router.get('/', (req, res) => {
-//     Food.find((err, doc) => {
-//         if(err){
-//             console.log('Error in GET Data ' + err);
-//         } else {
-//             res.send(doc);
-//         }
-//     })
-// })
 
 router.get('/', async(req, res) => {
     const {type} = req.query;

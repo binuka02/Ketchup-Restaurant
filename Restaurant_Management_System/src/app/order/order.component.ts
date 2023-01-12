@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Food } from '../admin/food.model';
 import { AppService } from '../app.service';
 import { OrderService } from './order.service';
@@ -24,7 +25,7 @@ orderForm:FormGroup = new FormGroup({
   city: new FormControl('')
 
 });
-  constructor(private OrderService:OrderService, private appService:AppService,private http:HttpClient) { }
+  constructor(private OrderService:OrderService, private appService:AppService,private http:HttpClient,private router:Router) { }
 
   ngOnInit(): void {
     this.cart = this.appService.getCart()
@@ -45,28 +46,16 @@ quantity:item.quantity
     if(this.orderForm.invalid){
       return;
     }
+    this.router.navigate(["/checkout"],{queryParams:{...this.orderForm.value,amount:this.totalPriceNumber}})
     console.log("submit")
-    console.log(this.orderForm.value,this.cartNew)
-    this.http.post('http://localhost:3000/order',{...this.orderForm.value,items:this.cartNew,amount:this.totalPriceNumber}).subscribe((res:any) => {
-      console.log(res)
-    } )
+    // console.log(this.orderForm.value,this.cartNew)
+    // this.http.post('http://localhost:3000/order',{...this.orderForm.value,items:this.cartNew,amount:this.totalPriceNumber}).subscribe((res:any) => {
+    //   console.log(res)
+    // } )
 
-    let user = {
-      name: this.orderForm.value.firstname,
-      email: this.orderForm.value.email,
-      subject: "Order Confirmation",
-      text: "Your order has been placed successfully."
-    }
 
-    this.OrderService.sendEmail("http://localhost:3000/sendemail",user).subscribe(
-      (data: any) => {
-        let res:any = data;
-        console.log(res);
-      },
-      (error: any) => {
-        console.log(error);
-      }
-    );
   }
+
+
 
 }
