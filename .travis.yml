@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - 16
 before_install:
-  - cd web-api
+  - cd backend
 install:
   - npm install
 cache:
