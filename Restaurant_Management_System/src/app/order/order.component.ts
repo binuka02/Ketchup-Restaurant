@@ -53,9 +53,11 @@ quantity:item.quantity
     //   console.log(res)
     // } )
 
+    // console.log(this.orderForm.value)
+    // this.http.post('http://localhost:3000/order',{...this.orderForm.value}).subscribe((res:any) => {
+    //   console.log(res)
+    // } )
+    // this.orderForm.reset();
 
   }
-
-
-
 }

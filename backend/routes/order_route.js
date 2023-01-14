@@ -13,6 +13,7 @@ router.post('/', async(req, res) => {
     const user = {
         email,
         name: firstname + " " + lastname,
+        amount
     }
     await sendEmail(user,info => {
         console.log(`The mail has beed send and the id is ${info.messageId}`);

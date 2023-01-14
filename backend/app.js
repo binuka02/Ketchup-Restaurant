@@ -6,6 +6,7 @@ const foodRoutes = require('./routes/food_route.js')
 const AdminRoutes = require('./routes/admin_route.js')
 const OrderRoutes = require('./routes/order_route.js')
 const TableRoutes = require('./routes/table_route.js')
+const CustomerRoutes = require('./routes/customer_route.js')
 const path = require('path');
 const http = require('http');
 const { Server } = require("socket.io");
@@ -45,5 +46,6 @@ app.use('/food', foodRoutes);
 app.use('/admin', AdminRoutes);
 app.use('/order', OrderRoutes);
 app.use('/table', TableRoutes);
+app.use('/customer', CustomerRoutes);
 
 server.listen(3000, () => console.log('Server started at port : 3000'));

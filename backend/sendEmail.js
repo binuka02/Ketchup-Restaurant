@@ -25,7 +25,7 @@ let mailOptions = {
     from: '"ketchupfoods@gmail.com"', 
     to: user.email,
     subject: "Order Confirmation",
-    html: `<b>Hello ${user.name}, <br></br>Your order has been placed succesfully.</b> ${user.amount}} Thank you for ordering with Ketchup.`
+    html: `<b>Hello ${user.name}, <br>Your order has been placed succesfully.<br>Amount : ${user.amount}<br>Thank you for ordering with Ketchup Restaurant</b>`
     
 };
 

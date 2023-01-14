@@ -87,6 +87,7 @@ quantity:item.quantity
       console.log('onClientAuthorization - you should probably inform your server about completed transaction at this point', data);
       this.http.post('http://localhost:3000/order',{...this.orderForm,items:this.cartNew}).subscribe((res:any) => {
       console.log(res)
+
       this.router.navigate(["/"]);
       this.appService.allCartUpdate([])
     } )
