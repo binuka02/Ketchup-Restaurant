@@ -164,7 +164,26 @@ i{
   border-radius: 4px;
   font-weight: bold;
   border-radius: 15px;
+}
 
+#btnclearcart{
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  height: 35px;
+  width: 130px;
+  background-color: white;
+  color: black;
+  border-radius: 4px;
+  font-weight: bold;
+  border-radius: 15px;
+  border-color: black;
+}
+
+#btnclearcart:hover{
+  background-color: black;
+  border: 1px solid;
+  color: white;
 }
 
 #btn:hover{
@@ -184,4 +203,13 @@ i{
 
 #btn:hover .fa-arrow-right{
   color: black;
+}
+
+.fa-trash-can{
+
+  color: black;
+}
+
+#btnclearcart:hover .fa-trash-can{
+  color: white;
 }

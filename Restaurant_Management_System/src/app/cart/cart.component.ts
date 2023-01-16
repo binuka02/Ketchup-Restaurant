@@ -25,13 +25,18 @@ originalPrice:number[] =[];
     this.appService.chartChangeListner().subscribe((res:any) => {
       this.cart = res;
       this.cart.map((item:Food) => {
-        this.originalPrice.push(item.price);
         item.quantity = 1;
+        this.originalPrice.push(item.price);
+
         this.totalPriceNumber = this.totalPriceNumber+item.price;
       this.totalPrice = this.totalPriceNumber.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
       })
     }
     )
+  }
+
+  clearcart(){
+    this.appService.allCartUpdate([]);
   }
 
   increaseQuantity(index:number){
