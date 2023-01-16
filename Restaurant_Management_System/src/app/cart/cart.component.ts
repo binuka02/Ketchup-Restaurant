@@ -34,6 +34,12 @@ originalPrice:number[] =[];
     )
   }
 
+  clearcart(){
+    this.appService.allCartUpdate([]);
+    this.totalPriceNumber = 0;
+    this.totalPrice = this.totalPriceNumber.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+  }
+
   increaseQuantity(index:number){
     this.cart[index].quantity++;
     this.cart[index].price = this.originalPrice[index]*this.cart[index].quantity;

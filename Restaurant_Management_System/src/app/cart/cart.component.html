@@ -1,12 +1,14 @@
 <div class="container" id="container">
   <div class="row">
     <div class="col-12">
-      <h4 id="emptycart" *ngIf="cart.length===0"><i class="fa-light fa-cart-xmark"></i>Sorry, You don't have any items in the cart!</h4>
+      <h4 id="emptycart" *ngIf="cart.length===0"><i class="fa-light fa-cart-xmark"></i>Sorry, You don't have any item in the cart!</h4>
+
       <table class="table table-image" *ngIf="cart.length>0">
+
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Item Image</th>
+            <th scope="col">Item</th>
             <th scope="col">Item Name</th>
             <th scope="col">Item Price</th>
             <th scope="col">Item Quantity</th>
@@ -26,6 +28,9 @@
             <td><i class="fa fa-trash" id="delete"  aria-hidden="true" role="button" (click)="deleteItem(i)"></i></td>
           </tr>
         </tbody>
+        <div id="btndiv">
+          <button type="submit" class="btnlogin mt-3 mb-5" id="btn" (click)="clearcart()">Clear Cart&nbsp;<i class="fa-solid fa-trash-can"></i></button>
+        </div>
       </table>
       <h4 *ngIf="cart.length>0" id="total">Total: {{totalPrice}}</h4>
 
