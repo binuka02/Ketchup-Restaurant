@@ -155,15 +155,14 @@ i{
 
 #btn{
   border: none;
-  border-radius: 50%;
   outline: none;
   height: 35px;
-  width: 130px;
+  width: 200px;
   background-color: black;
   color: white;
   border-radius: 4px;
   font-weight: bold;
-  border-radius: 15px;
+  border-radius: 5px;
 
 }
 
@@ -183,5 +182,13 @@ i{
 }
 
 #btn:hover .fa-arrow-right{
+  color: black;
+}
+
+.fa-trash-can{
+  color: #fff;
+}
+
+#btn:hover .fa-trash-can{
   color: black;
 }
