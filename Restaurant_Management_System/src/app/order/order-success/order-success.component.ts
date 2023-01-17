@@ -13,7 +13,7 @@ export class OrderSuccessComponent implements OnInit {
   ngOnInit(): void {
     setTimeout(()=>{
 this.router.navigate(['/']);
-    },3000)
+    },2000)
   }
 
 }

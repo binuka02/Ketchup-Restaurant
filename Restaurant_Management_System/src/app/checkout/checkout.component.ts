@@ -88,7 +88,7 @@ quantity:item.quantity
       this.http.post('http://localhost:3000/order',{...this.orderForm,items:this.cartNew}).subscribe((res:any) => {
       console.log(res)
 
-      this.router.navigate(["/"]);
+      this.router.navigate(["/order-success"]);
       this.appService.allCartUpdate([])
     } )
     },
