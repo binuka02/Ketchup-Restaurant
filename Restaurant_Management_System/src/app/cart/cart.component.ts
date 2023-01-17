@@ -24,9 +24,10 @@ originalPrice:number[] =[];
     })
     this.appService.chartChangeListner().subscribe((res:any) => {
       this.cart = res;
+      console.log(this.cart);
+this.totalPriceNumber = 0;
       this.cart.map((item:Food) => {
         this.originalPrice.push(item.price);
-        item.quantity = 1;
         this.totalPriceNumber = this.totalPriceNumber+item.price;
       this.totalPrice = this.totalPriceNumber.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
       })

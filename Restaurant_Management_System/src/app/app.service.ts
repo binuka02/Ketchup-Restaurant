@@ -37,7 +37,10 @@ cartChange = new Subject<Food[]>();
   }
 
 allCartUpdate(cart:Food[]){
+
 this.cart = cart;
+this.cartChange.next(this.cart);
+console.log(this.cart)
 localStorage.setItem('cart', JSON.stringify(this.cart));
 }
 

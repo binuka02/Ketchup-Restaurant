@@ -106,6 +106,7 @@ if(this.menu == "soups") {
   }
 
   addtoCart(item:Food){
+    item.quantity = 1;
     this.appService.addCart(item);
   }
 
