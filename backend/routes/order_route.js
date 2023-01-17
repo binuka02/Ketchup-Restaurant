@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const Order = require('../models/order.js');
+const Customer = require('../models/customer.js');
 const sendEmail = require('../sendEmail.js');
 
 
@@ -10,6 +11,7 @@ router.post('/', async(req, res) => {
     const amountNew = +amount
     console.log(firstname, lastname, email, phone, address, city, amount, items)
     const order = await Order.create({firstname: firstname, lastname: lastname, email: email, phone: phone, address: address, city: city, amount: amountNew, items: items});
+    const customer  = await Customer.create({firstname: firstname, lastname: lastname, email: email, phone: phone, address: address, city: city});
     const user = {
         email,
         name: firstname + " " + lastname,

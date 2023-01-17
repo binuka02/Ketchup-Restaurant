@@ -38,6 +38,7 @@ import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 
 import { NgxPayPalModule } from 'ngx-paypal';
+import { OrderSuccessComponent } from './order/order-success/order-success.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { NgxPayPalModule } from 'ngx-paypal';
     ViewtableComponent,
     AdminHomeComponent,
     CheckoutComponent,
+    OrderSuccessComponent,
 
 
   ],

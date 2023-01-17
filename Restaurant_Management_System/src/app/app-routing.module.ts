@@ -6,6 +6,8 @@ import { FoodComponent } from './admin/food/food.component';
 import { ViewordersComponent } from './admin/vieworders/vieworders.component';
 import { ViewtableComponent } from './admin/viewtable/viewtable.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { OrderSuccessComponent } from './order/order-success/order-success.component';
+
 
 const routes: Routes = [
 
@@ -15,6 +17,7 @@ const routes: Routes = [
  { path: 'admin-login', component: AdminLoginComponent },
  { path: 'view-orders', component: ViewordersComponent},
  { path: 'view-table', component: ViewtableComponent},
+ {path:"order-success", component:OrderSuccessComponent},
  {path:"checkout",component:CheckoutComponent},
 
 //  { path: 'breakfast', component: MenuComponent},
