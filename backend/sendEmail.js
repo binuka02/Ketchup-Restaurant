@@ -22,7 +22,7 @@ async function sendEmail(user, callback) {
 
 
 let mailOptions = {
-    from: '"ketchupfoods@gmail.com"', 
+    from: '"Ketchup Restaurant" <ketchupfoods@gmail.com>', 
     to: user.email,
     subject: "Order Confirmation",
     // html: `<b>Hello ${user.name}, <br>Your order has been placed succesfully.<br>Amount : ${user.amount}<br>Thank you for ordering with Ketchup Restaurant</b>`
