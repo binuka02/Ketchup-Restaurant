@@ -1,7 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const mongoose = require('./db.js');
 const foodRoutes = require('./routes/food_route.js')
 const AdminRoutes = require('./routes/admin_route.js')
 const OrderRoutes = require('./routes/order_route.js')
@@ -15,6 +14,7 @@ const sendEmail = require('./sendEmail.js');
 const ejs = require("ejs");
 const paypal = require("paypal-rest-sdk");
 require('dotenv').config();
+const mongoose = require('./db.js');
 
 const app = express();
 const server = http.createServer(app);
@@ -49,3 +49,5 @@ app.use('/table', TableRoutes);
 app.use('/customer', CustomerRoutes);
 
 server.listen(3000, () => console.log('Server started at port : 3000'));
+
+module.exports = app;
