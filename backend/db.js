@@ -1,3 +1,4 @@
+
 const mongoose = require('mongoose');
 
 // mongoose.connect('mongodb://localhost:27017/restuarantDB', err => {
@@ -9,8 +10,9 @@ const mongoose = require('mongoose');
 // })
 mongoose.set('strictQuery', true);
 
+const MONGO_URL = process.env.NODE_ENV?.trim() !== 'test' ? process.env.MONGO_URL : process.env.MONGO_URL_TEST;
 
-mongoose.connect('mongodb+srv://admin:NK0Bg4B6ASh1URiy@cluster0.6fae3rq.mongodb.net/restuarantDB?retryWrites=true&w=majority', err => {
+mongoose.connect(MONGO_URL, err => {
     if(!err){
         console.log('DB Connection Sucessful');
     } else {

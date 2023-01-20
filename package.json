@@ -2,6 +2,7 @@
   "dependencies": {
     "body-parser": "^1.20.1",
     "chai": "^4.3.7",
+    "chai-http": "^4.3.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "ejs": "^3.1.8",
@@ -22,8 +23,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "cd backend && nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd backend && SET NODE_ENV=developement && nodemon app.js",
+    "test": "cd backend && SET NODE_ENV=test && mocha --ui tdd",
     "build": "nodemon app.js"
   },
   "repository": {

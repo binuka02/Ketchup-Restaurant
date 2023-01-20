@@ -68,7 +68,7 @@ router.post('/',upload.single("foodImage"), (req, res) => {
         } else {
             const io = req.app.get("io")
             io.emit("foodAdded", doc)
-            res.send(doc);
+            res.status(201).send(doc);
         }
     })
 })
