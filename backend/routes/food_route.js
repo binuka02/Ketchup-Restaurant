@@ -18,7 +18,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 
-//GET food
+//GET food by ID
 router.get('/:id', (req, res) => {
     if(ObjectId.isValid(req.params.id)){
         Food.findById(req.params.id, (err, doc) => {
@@ -33,7 +33,7 @@ router.get('/:id', (req, res) => {
     }
 })
 
-//GET API
+//GET all food
 
 router.get('/', async(req, res) => {
     const {type} = req.query;
@@ -46,7 +46,7 @@ router.get('/', async(req, res) => {
     res.send(food);
 })
 
-//POST API
+//POST all food
 router.post('/',upload.single("foodImage"), (req, res) => {
     console.log(req.body)
     console.log(req.file)
@@ -73,7 +73,7 @@ router.post('/',upload.single("foodImage"), (req, res) => {
     })
 })
 
-//PUT API
+//PUT food by ID
 router.patch('/:id',upload.single("foodImage"), (req, res) => {
     console.log("#inside put")
     console.log(req.params.id)

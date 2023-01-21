@@ -6,40 +6,22 @@ import { io } from 'socket.io-client';
   providedIn: 'root'
 })
 export class WebsocketService {
-
   socket = io( 'http://localhost:3000');
-
   constructor() {}
 
-
-
   listenToServer(connection: string): Observable<any> {
-
     return new Observable((observer) => {
-
       this.socket.on(connection, (data) => {
-
         observer.next(data);
-
       });
-
     });
-
   }
-
-
 
   emit(eventName: string, data: any) {
-
     this.socket.emit(eventName, data);
-
   }
 
-
-
   disconnect() {
-
     this.socket.disconnect();
-
   }
 }
