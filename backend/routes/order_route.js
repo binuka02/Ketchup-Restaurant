@@ -20,7 +20,7 @@ router.post('/', async(req, res) => {
     await sendEmail(user,info => {
         console.log(`The mail has beed send and the id is ${info.messageId}`);
      })
-    res.status(201).json({msg:"Order Success"});
+    res.status(201).json(order);
 });
 
 router.get('/', async(req, res) => {
