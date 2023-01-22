@@ -11,8 +11,8 @@ suite("Testing Table Route",()=>{
             chai.request(server)
             .post('/table')
             .send({
-                firstname: "Test First",
-                lastname: "Test Last",
+                firstName: "Test First",
+                lastName: "Test Last",
                 email: "abc@gmail.com",
                 phone: "1234567890",
                 date: "2021-05-01",
@@ -21,8 +21,8 @@ suite("Testing Table Route",()=>{
             })
             .end((err, res) => {
                 chai.expect(res).to.have.status(201);
-                chai.expect(res.body).to.have.property('firstname');
-                chai.expect(res.body).to.have.property('lastname');
+                chai.expect(res.body).to.have.property('firstName');
+                chai.expect(res.body).to.have.property('lastName');
                 chai.expect(res.body).to.have.property('email');
                 chai.expect(res.body).to.have.property('phone');
                 chai.expect(res.body).to.have.property('date');

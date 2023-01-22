@@ -15,10 +15,10 @@
                 <div class="item-name">{{item.name}}</div>
                 <div class="item-description">{{item.description}}</div>
                 <div class="row">
-                    <div class="col-xs-4">
+                    <div class="col-xs-4" style="position: absolute;bottom: 0px;">
                       <div class="addcart">
                         <p class="item_price">${{item.price}}</p><br>
-                        <button class="button-hover-addcart button" (click)="addtoCart(item)"><span>Add to Cart &nbsp;</span><i class="fa fa-shopping-cart"></i></button>
+                        <button  class="button-hover-addcart button" (click)="addtoCart(item)"><span>Add to Cart &nbsp;</span><i class="fa fa-shopping-cart"></i></button>
                       </div>
                     </div>
                 </div>

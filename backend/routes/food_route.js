@@ -50,6 +50,11 @@ router.get('/', async(req, res) => {
 router.post('/',upload.single("foodImage"), (req, res) => {
     console.log(req.body)
     console.log(req.file)
+    const {name, price, description, type} = req.body;
+    // new
+    if(!name || !price || !description || !type){
+        return res.status(400).send({msg:"All fields are required"});
+    }
     let imageUrl = ""
     if(req.file){
         imageUrl = "http://localhost:3000/uploads/" + req.file.filename;

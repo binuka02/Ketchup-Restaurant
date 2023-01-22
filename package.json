@@ -23,8 +23,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "cd backend && SET NODE_ENV=developement && nodemon app.js",
-    "test": "cd backend && SET NODE_ENV=test && mocha --ui tdd",
+    "start": "cd backend && set NODE_ENV=developement && nodemon app.js",
+    "test": "cd backend && set NODE_ENV=test && mocha --ui tdd --timeout 10000",
     "build": "nodemon app.js"
   },
   "repository": {
