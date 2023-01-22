@@ -30,9 +30,9 @@ export class CheckoutComponent implements OnInit {
     console.log(this.cart)
     this.cartNew = this.cart.map((item:Food) => {
       return{
-name:item.name,
-price:item.price,
-quantity:item.quantity
+        name:item.name,
+        price:item.price,
+        quantity:item.quantity
       }
     });
     this.initConfig();
