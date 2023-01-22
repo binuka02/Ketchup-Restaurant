@@ -80,7 +80,7 @@ suite("Testing Food Route",()=>{
                 chai.expect(res).to.have.status(404);
                 chai.expect(res.body).to.be.an('object');
                 done();
-                process.exit(0)
+                
 
             })
         })

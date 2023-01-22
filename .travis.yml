@@ -10,3 +10,5 @@ cache:
     - node_modules
 script:
   - npm run
+notifications:
+  email: ketchupfoods@gmail.com

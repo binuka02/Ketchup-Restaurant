@@ -20,12 +20,15 @@ async function sendEmail(user, callback) {
         }
     });
 
+    var maillist = [
+        user.email,
+        'ketchupfoods@gmail.com',
+      ];
 
 let mailOptions = {
     from: '"Ketchup Restaurant" <ketchupfoods@gmail.com>', 
-    to: user.email,
     subject: "Order Confirmation",
-    // html: `<b>Hello ${user.name}, <br>Your order has been placed succesfully.<br>Amount : ${user.amount}<br>Thank you for ordering with Ketchup Restaurant</b>`
+    to: maillist,
     html: `<!DOCTYPE html>
     <html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en">
     

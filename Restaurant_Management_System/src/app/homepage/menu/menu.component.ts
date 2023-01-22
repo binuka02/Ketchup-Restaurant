@@ -27,9 +27,6 @@ export class MenuComponent implements OnInit{
           this.food = [res,...this.food]
         }
         console.log(res);
-
-
-
       })
 
       this.socket.listenToServer('foodUpdated').subscribe((res:any) => {
@@ -41,9 +38,6 @@ export class MenuComponent implements OnInit{
             return food
           })
         }
-
-
-
       })
 
       this.socket.listenToServer('foodDeleted').subscribe((res:any) => {
@@ -55,9 +49,6 @@ export class MenuComponent implements OnInit{
             return true
           })
         }
-
-
-
       })
 
       if(this.menu == "breakfast") {

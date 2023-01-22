@@ -31,9 +31,9 @@ orderForm:FormGroup = new FormGroup({
     this.cart = this.appService.getCart()
     this.cartNew = this.cart.map((item:Food) => {
       return{
-name:item.name,
-price:item.price,
-quantity:item.quantity
+        name:item.name,
+        price:item.price,
+        quantity:item.quantity
       }
     });
     this.cart.map((item:Food) => {
