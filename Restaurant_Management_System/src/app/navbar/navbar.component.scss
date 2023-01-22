@@ -1,6 +1,6 @@
 
 .container-fluid{
-  height: 80px;
+  height: 90px;
   background-color: #000821;
   margin-top: 0px;
   margin-left: 5px;
@@ -20,7 +20,13 @@
   font-family: 'elephant';
 }
 
-.navbar-brand:hover {
+img{
+  height: 85px;
+  margin-left: 80px;
+
+}
+
+.img:hover {
   -ms-transform: scale(1.1);
   -webkit-transform: scale(1.1);
   transform: scale(0.95);
