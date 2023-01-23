@@ -5,9 +5,9 @@ const Order = require('../models/order');
 
 chai.use(chaiHttp)
 
-suite("Testing Order Route",()=>{
+suite("\n***************************** Testing Order Process *****************************\n",()=>{
 
-    test("Test POST /order (Adding an Order)", (done)=>{
+    test("01. Test Adding an Order", (done)=>{
         chai.request(server)
         .post('/order')
         .send({
@@ -38,7 +38,7 @@ suite("Testing Order Route",()=>{
         })
     })
 
-    test("Test GET /order (Getting all Orders)", (done)=>{
+    test("02. Test Getting all Orders", (done)=>{
         chai.request(server)
         .get('/order')
         .end((err, res) => {

@@ -5,9 +5,9 @@ const Tablw = require('../models/table');
 
 chai.use(chaiHttp)
 
-suite("Testing Table Route",()=>{
+suite("\n***************************** Testing Table Reservation Process *****************************\n",()=>{
         
-        test("Test POST /table (Adding a Table)", (done)=>{
+        test("01. Test Request a Table Reseravtion", (done)=>{
             chai.request(server)
             .post('/table')
             .send({
@@ -32,7 +32,7 @@ suite("Testing Table Route",()=>{
             })  
         })
         
-        test("Test GET /table (Getting all Table)", (done)=>{
+        test("02. Test Getting all Table Reservation Requests", (done)=>{
             chai.request(server)
             .get('/table')
             .end((err, res) => {

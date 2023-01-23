@@ -5,9 +5,9 @@ const Admin = require('../models/admin');
 
 chai.use(chaiHttp)
 
-suite("Testing Admin Route",()=>{
+suite("\n***************************** Testing Admin Login Process *****************************\n",()=>{
     
-    test("Test POST /admin (Adding an Admin)", (done)=>{
+    test("01. Test Login an Admin", (done)=>{
         chai.request(server)
         .post('/admin')
         .send({
