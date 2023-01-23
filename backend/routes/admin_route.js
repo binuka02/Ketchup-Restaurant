@@ -8,9 +8,9 @@ router.post('/', async(req, res) => {
     console.log(username,password)
 
     const admin = await Admin.findOne({username: username, password: password});
-    if(!admin){
+    if(!admin || !password){
         res.status(404).json({msg:'Invalid username or password'});
-        return
+        return;
     }
     res.status(200).json(admin);
 });

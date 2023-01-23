@@ -80,10 +80,14 @@ router.post('/',upload.single("foodImage"), (req, res) => {
 
 //PUT food by ID
 router.patch('/:id',upload.single("foodImage"), (req, res) => {
-    console.log("#inside put")
     console.log(req.params.id)
-
     console.log(req.body)
+
+    // new
+    // if(!name || !price || !description || !type){
+    //     return res.status(400).send({msg:"All fields are required"});
+    // }
+
     if(ObjectId.isValid(req.params.id)){
         let food = {
             name: req.body.name,
