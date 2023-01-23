@@ -8,6 +8,7 @@ import { ViewtableComponent } from './admin/viewtable/viewtable.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { OrderSuccessComponent } from './order/order-success/order-success.component';
 import { AdminSignupComponent } from './admin/admin-signup/admin-signup.component';
+import { ReserveSuccessComponent } from './homepage/reservetable/reserve-success/reserve-success.component';
 
 
 const routes: Routes = [
@@ -21,6 +22,7 @@ const routes: Routes = [
  { path: 'order-success', component:OrderSuccessComponent},
  { path: 'checkout',component:CheckoutComponent},
  { path: 'admin-signup', component: AdminSignupComponent },
+ { path: 'reserve-success', component:ReserveSuccessComponent}
 
 
 //  { path: 'breakfast', component: MenuComponent},
