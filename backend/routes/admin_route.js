@@ -15,5 +15,17 @@ router.post('/', async(req, res) => {
     res.status(200).json(admin);
 });
 
+router.post('/', async (req, res) => {
+    const {firstName, lastName, username, password, confirmpassword} = req.body;
+    console.log(firstName, lastName, username, password, confirmpassword)
+    const admin = await Admin.create({firstName: firstName, lastName: lastName, username: username, password: password, confirmpassword: confirmpassword});
+    
+    // if(!firstName || !lastName ||!username ||!password || !confirmpassword){
+    //     return res.status(400).send({msg:"All fields are required"});
+    // }
+
+    res.status(201).json(admin);
+});
+
 module.exports = router;
 

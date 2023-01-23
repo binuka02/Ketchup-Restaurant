@@ -1,0 +1,54 @@
+<section class="Form my-4 mx-6" id="full">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-6">
+        <img src="https://img.freepik.com/free-vector/dropdown-menu-concept-illustration_114360-4405.jpg?w=2000" class="img-fluid">
+      </div>
+
+      <div class="col-md-6 px-5 pt-5" id="right">
+        <i class="fa-solid fa-user-unlock" id="user-login-icon"></i>
+        <h1 class="font-weight-bold">KETCHUP</h1>
+        <h3>Admin Sign Up</h3>
+        <br>
+
+      <form [formGroup]="signupForm">
+        <div class="form-row">
+          <div class="col-lg-7">
+            <input type="text" placeholder="First Name" class="form-control my-3 p-4"  formControlName="firstname">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-lg-7">
+            <input type="text" placeholder="Last Name" class="form-control my-3 p-4"  formControlName="lastname">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-lg-7">
+            <input type="text" placeholder="Username" class="form-control my-3 p-4"  formControlName="username">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-lg-7">
+            <input type="password" placeholder="Password" class="form-control my-3 p-4" formControlName="password">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-lg-7">
+            <input type="password" placeholder="Confirm Password" class="form-control my-3 p-4" formControlName="confirmpassword">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-lg-7">
+            <button type="button" class="btnlogin mt-3 mb-5">SignUp</button>
+          </div>
+        </div>
+
+      </form>
+
+</div>
+
+
+    </div>
+  </div>
+</section>

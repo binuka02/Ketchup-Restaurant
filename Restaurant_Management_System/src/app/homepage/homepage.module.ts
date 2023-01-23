@@ -11,11 +11,12 @@ import { ReservetableComponent } from './reservetable/reservetable.component';
 import { CartComponent } from '../cart/cart.component';
 import { OrderComponent } from '../order/order.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReserveSuccessComponent } from './reservetable/reserve-success/reserve-success.component';
 
 
 
 @NgModule({
-  declarations: [HomeBodyComponent,MenuComponent,NavbarComponent,FooterComponent,HomepageComponent,ReservetableComponent],
+  declarations: [HomeBodyComponent,MenuComponent,NavbarComponent,FooterComponent,HomepageComponent,ReservetableComponent, ReserveSuccessComponent],
   imports: [
     CommonModule,
 ReactiveFormsModule,
