@@ -37,6 +37,7 @@ import { ViewtableComponent } from './admin/viewtable/viewtable.component';
 import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 
+
 import { NgxPayPalModule } from 'ngx-paypal';
 import { OrderSuccessComponent } from './order/order-success/order-success.component';
 

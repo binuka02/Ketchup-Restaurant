@@ -8,6 +8,11 @@ router.post('/', async (req, res) => {
     const {firstName, lastName, email, phone, date, time, seatcount} = req.body;
     console.log(firstName, lastName, email, phone, date, time, seatcount)
     const table = await Table.create({firstName: firstName, lastName: lastName, email: email, phone: phone, date: date, time: time, seatcount: seatcount});
+   
+    if(!firstName || !lastName ||!email ||!phone || !date || !time ||!seatcount){
+        return res.status(400).send({msg:"All fields are required"});
+    }
+
     res.status(201).json(table);
 });
 

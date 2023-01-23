@@ -6,13 +6,13 @@ const sendEmail = require('../sendEmail');
 
 chai.use(chaiHttp)
 
-suite("Testing Food Route",()=>{
+suite("\n***************************** Testing Food Process *****************************\n",()=>{
 
-    test("Test POST /food (Adding a Food)", (done)=>{
+    test("01. Test Adding a Food", ()=>{
         chai.request(server)
         .post('/food')
         .send({
-            name: "Test Food",
+            name: "Test Food 1",
             price: 100,
             description: "Testing Food",
             type: "breakfast",
@@ -25,12 +25,11 @@ suite("Testing Food Route",()=>{
             chai.expect(res.body).to.have.property('description');
             chai.expect(res.body).to.have.property('type');
             chai.expect(res.body).to.have.property('imageUrl');
-            done();
         })
         
     })
 
-    test("Test POST /food (Adding a Food)", (done)=>{
+    test(" 01. I. Test Adding a Food without Food Name", (done)=>{
         chai.request(server)
         .post('/food')
         .send({
@@ -46,7 +45,55 @@ suite("Testing Food Route",()=>{
         
     })
 
-    test("Test GET /food (Getting all Food)", (done)=>{
+    test(" 01. II. Test Adding a Food without Food Price", (done)=>{
+        chai.request(server)
+        .post('/food')
+        .send({
+            name: "Test Food 1",
+            description: "Testing Food",
+            type: "breakfast",
+        })
+        .end((err, res) => {
+            chai.expect(res).to.have.status(400);
+            chai.assert.equal(res.body.msg,'All fields are required');
+            done();
+        })
+        
+    })
+
+    test(" 01. III. Test Adding a Food without Description", (done)=>{
+        chai.request(server)
+        .post('/food')
+        .send({
+            name: "Test Food 1",
+            price: 100,
+            type: "breakfast",
+        })
+        .end((err, res) => {
+            chai.expect(res).to.have.status(400);
+            chai.assert.equal(res.body.msg,'All fields are required');
+            done();
+        })
+        
+    })
+
+    test(" 01. IV. Test Adding a Food without Food Type", (done)=>{
+        chai.request(server)
+        .post('/food')
+        .send({
+            name: "Test Food 1",
+            price: 100,
+            description: "Testing Food",
+        })
+        .end((err, res) => {
+            chai.expect(res).to.have.status(400);
+            chai.assert.equal(res.body.msg,'All fields are required');
+            done();
+        })
+        
+    })
+
+    test("02. Test Getting all Food", (done)=>{
         chai.request(server)
         .get('/food')
         .end((err, res) => {
@@ -57,60 +104,26 @@ suite("Testing Food Route",()=>{
         })
     })
 
-    test("Test GET /food/:id (Getting a Food by ID)", async ()=>{
+    test("03. Test Getting a Food by ID", async ()=>{
         const food = await Food.findOne({})
             chai.request(server)
             .get('/food/'+food._id)
             .end((err, res) => {
                 chai.expect(res).to.have.status(200);
                 chai.expect(res.body).to.be.an('object');
-        
-                // test("Test PUT /food/:id (Updating a Food by ID)", async()=>{
-                    
-                //         chai.request(server)
-                //         .patch('/food')
-                //         .send({
-                //             name: "Test Food",
-                //             price: 100,
-                //             description: "Testing Food",
-                //             type: "breakfast",
-                //         })
-                //         .end((err, res) => {
-                //             chai.expect(res).to.have.status(200);
-                //             chai.expect(res.body).to.be.an('object');
-                            
-
-                //             test("Test DELETE /food/:id (Deleting a Food by ID)", async()=>{
-                                
-                //                     chai.request(server)
-                //                     .delete('/food')
-                //                     .end((err, res) => {
-                //                         chai.expect(res).to.have.status(200);
-                //                         chai.expect(res.body).to.be.an('object');
-                                        
-                                        
-                        
-                                    
-                                
-                //             })
-            
-                //         })
-                //     })
-                // })
-
-
             
         })
     })
-    test("Test PUT /food/:id (Updating a Food by ID)", async()=>{
+
+    test("04. Test Updating a Food by ID", async()=>{
         const food = await Food.findOne({})
             chai.request(server)
             .patch('/food/'+food._id)
             .send({
-                name: "Test Food",
-                price: 100,
-                description: "Testing Food",
-                type: "breakfast",
+                name: "Test Food 2",
+                price: 50,
+                description: "Testing Update a Food",
+                type: "lunch",
             })
             .end((err, res) => {
                 chai.expect(res).to.have.status(200);
@@ -120,14 +133,30 @@ suite("Testing Food Route",()=>{
         })
     })
 
-    test("Test DELETE /food/:id (Deleting a Food by ID)", async()=>{
+    // test(" 04. I. Test Updating a Food without Food Name", (done)=>{
+    //     const food = Food.findOne({})
+    //     chai.request(server)
+    //     .patch('/food/'+food._id)
+    //     .send({
+    //         price: 50,
+    //         description: "Testing Update a Food",
+    //         type: "lunch",
+    //     })
+    //     .end((err, res) => {
+    //         chai.expect(res).to.have.status(400);
+    //         chai.assert.equal(res.body.msg,'All fields are required');
+    //         done();
+    //     })
+        
+    // })
+
+    test("05. Test Deleting a Food by ID", async()=>{
         const food = await Food.findOne({})
             chai.request(server)
             .delete('/food/'+food._id)
             .end((err, res) => {
                 chai.expect(res).to.have.status(200);
                 chai.expect(res.body).to.be.an('object');
-                
                 
         })
     })
