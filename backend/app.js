@@ -29,6 +29,8 @@ app.use(express.json());
 app.use(express.urlencoded({extended:false}))
 app.use(cors())
 app.use(bodyParser.json());
+
+app.use(express.static(path.resolve("../Restaurant_Management_System/dist/restaurant-management-system")))
 app.use('/uploads', express.static(path.resolve('./uploads')));
 
 app.get("/email", async(req, res) => {
@@ -48,6 +50,10 @@ app.use('/order', OrderRoutes);
 app.use('/table', TableRoutes);
 app.use('/customer', CustomerRoutes);
 
-server.listen(3000, () => console.log('Server started at port : 3000'));
+app.get("*", (req, res) => {
+    res.sendFile(path.resolve("../Restaurant_Management_System/dist/restaurant-management-system/index.html"));
+});
+
+server.listen(4000, () => console.log('Server started at port : 3000'));
 
 module.exports = app;

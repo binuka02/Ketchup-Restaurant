@@ -12,20 +12,25 @@
         <h3>Admin Sign Up</h3>
         <br>
 
-      <form [formGroup]="signupForm">
+      <form [formGroup]="signupForm" (submit)="onSubmit()">
         <div class="form-row">
           <div class="col-lg-7">
-            <input type="text" placeholder="First Name" class="form-control my-3 p-4"  formControlName="firstname">
+            <input type="text" placeholder="First Name" class="form-control my-3 p-4"  formControlName="firstName">
           </div>
         </div>
         <div class="form-row">
           <div class="col-lg-7">
-            <input type="text" placeholder="Last Name" class="form-control my-3 p-4"  formControlName="lastname">
+            <input type="text" placeholder="Last Name" class="form-control my-3 p-4"  formControlName="lastName">
           </div>
         </div>
         <div class="form-row">
           <div class="col-lg-7">
             <input type="text" placeholder="Username" class="form-control my-3 p-4"  formControlName="username">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-lg-7">
+            <input type="email" placeholder="Email" class="form-control my-3 p-4"  formControlName="email">
           </div>
         </div>
         <div class="form-row">
@@ -40,7 +45,7 @@
         </div>
         <div class="form-row">
           <div class="col-lg-7">
-            <button type="button" class="btnlogin mt-3 mb-5">SignUp</button>
+            <button type="submit" class="btnlogin mt-3 mb-5" >SignUp</button>
           </div>
         </div>
 

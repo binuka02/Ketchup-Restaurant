@@ -26,7 +26,7 @@ router.post('/', async(req, res) => {
     await sendEmail(user,info => {
         console.log(`The mail has beed send and the id is ${info.messageId}`);
      })
-    res.status(201).json(order);
+    res.status(201).json({order, customer});
 });
 
 router.get('/', async(req, res) => {

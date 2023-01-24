@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Food } from './food.model';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FoodService {
-  url = 'http://localhost:3000/food';
+  url = environment.apiUrl+'/food';
   constructor(private http: HttpClient) { }
 
   addFood(food: Food,imageFile: File | null){

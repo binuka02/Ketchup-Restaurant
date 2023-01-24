@@ -48,8 +48,6 @@ router.get('/', async(req, res) => {
 
 //POST all food
 router.post('/',upload.single("foodImage"), (req, res) => {
-    console.log(req.body)
-    console.log(req.file)
     const {name, price, description, type} = req.body;
     // new
     if(!name || !price || !description || !type){
@@ -80,19 +78,19 @@ router.post('/',upload.single("foodImage"), (req, res) => {
 
 //PUT food by ID
 router.patch('/:id',upload.single("foodImage"), (req, res) => {
-    console.log(req.params.id)
-    console.log(req.body)
+    const {name, price, description, type} = req.body;
 
-    // new
-    // if(!name || !price || !description || !type){
-    //     return res.status(400).send({msg:"All fields are required"});
-    // }
+    //new
+    if(!name || !price || !description || !type){
+        return res.status(400).send({msg:"All fields are required"});
+    }
 
     if(ObjectId.isValid(req.params.id)){
         let food = {
             name: req.body.name,
             price: req.body.price,
-            description: req.body.description
+            description: req.body.description,
+            type: req.body.type
         }
 
         Food.findByIdAndUpdate(req.params.id, {$set :food}, {new: true}, (err, doc) => {

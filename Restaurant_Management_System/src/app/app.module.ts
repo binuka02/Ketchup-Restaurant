@@ -77,7 +77,7 @@ import { AdminSignupComponent } from './admin/admin-signup/admin-signup.componen
     BrowserAnimationsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    NgxPayPalModule
+    NgxPayPalModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

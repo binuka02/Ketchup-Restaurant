@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Food } from '../admin/food.model';
 import { AppService } from '../app.service';
 import { Cart } from './cart.model';
+import { getProductionUrl } from '../utils/getProductionUrl';
 
 @Component({
   selector: 'app-cart',
@@ -9,6 +10,7 @@ import { Cart } from './cart.model';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
+  getProductionUrl = getProductionUrl;
 cart:Food[]=[]
 totalPrice:string="";
 totalPriceNumber:number=0;
@@ -45,13 +47,13 @@ this.totalPriceNumber = 0;
     this.cart[index].quantity++;
     this.cart[index].price = this.originalPrice[index]*this.cart[index].quantity;
     this.totalPriceNumber = 0
+
     this.cart.forEach((item:Food) => {
       this.totalPriceNumber = this.totalPriceNumber+item.price;
       this.totalPrice = this.totalPriceNumber.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
     })
 
     console.log(this.cart);
-
     this.appService.allCartUpdate(this.cart);
 
 
