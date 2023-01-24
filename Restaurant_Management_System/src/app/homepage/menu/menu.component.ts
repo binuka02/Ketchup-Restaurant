@@ -5,6 +5,7 @@ import { Food } from "src/app/admin/food.model";
 import { AppService } from "src/app/app.service";
 import { WebsocketService } from "src/app/websocket.service";
 import { HomepageService } from "../homepage.service";
+import { getProductionUrl } from "src/app/utils/getProductionUrl";
 
 @Component({
   selector: 'app-menu',
@@ -13,11 +14,13 @@ import { HomepageService } from "../homepage.service";
 })
 
 export class MenuComponent implements OnInit{
+  getProductionUrl = getProductionUrl;
   menu = ""
   food: Food[] = [];
    constructor(private homePageService:HomepageService,private route:ActivatedRoute,private appService:AppService,private socket:WebsocketService){}
 
   ngOnInit(): void {
+
 
     this.route.url.subscribe((res:any) => {
       console.log(res[0].path);

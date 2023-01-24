@@ -26,14 +26,20 @@ suite("\n***************************** Testing Order Process *******************
         })
         .end((err, res) => {
             chai.expect(res).to.have.status(201);
-            chai.expect(res.body).to.have.property('firstname');
-            chai.expect(res.body).to.have.property('lastname');
-            chai.expect(res.body).to.have.property('email');
-            chai.expect(res.body).to.have.property('phone');
-            chai.expect(res.body).to.have.property('address');
-            chai.expect(res.body).to.have.property('city');
-            chai.expect(res.body).to.have.property('amount');
-            chai.expect(res.body).to.have.property('items');
+            chai.expect(res.body.order).to.have.property('firstname');
+            chai.expect(res.body.order).to.have.property('lastname');
+            chai.expect(res.body.order).to.have.property('email');
+            chai.expect(res.body.order).to.have.property('phone');
+            chai.expect(res.body.order).to.have.property('address');
+            chai.expect(res.body.order).to.have.property('city');
+            chai.expect(res.body.order).to.have.property('amount');
+            chai.expect(res.body.order).to.have.property('items');
+            chai.expect(res.body.customer).to.have.property('firstname');
+            chai.expect(res.body.customer).to.have.property('lastname');
+            chai.expect(res.body.customer).to.have.property('email');
+            chai.expect(res.body.customer).to.have.property('phone');
+            chai.expect(res.body.customer).to.have.property('address');
+            chai.expect(res.body.customer).to.have.property('city');
             done();
         })
     })
@@ -233,4 +239,6 @@ suite("\n***************************** Testing Order Process *******************
             done();
         })
     })
+
+    
 })

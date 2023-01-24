@@ -22,7 +22,7 @@ export class AdminLoginComponent implements OnInit{
   login() {
     console.log(this.loginform.value);
     // alert("Login Successful");
-this.http.post("http://localhost:3000/admin",this.loginform.value).pipe(catchError((err:any)=>{
+this.http.post("http://localhost:3000/admin/login",this.loginform.value).pipe(catchError((err:any)=>{
   const error = new Error(err.error.msg);
   alert("Login Failed");
   return throwError(()=>error)

@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { io } from 'socket.io-client';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WebsocketService {
-  socket = io( 'http://localhost:3000');
+  socket = io(environment.apiUrl);
   constructor() {}
 
   listenToServer(connection: string): Observable<any> {

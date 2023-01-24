@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IPayPalConfig, ICreateOrderRequest } from 'ngx-paypal';
+import { environment } from 'src/environments/environment';
 import { Food } from '../admin/food.model';
 import { AppService } from '../app.service';
 
@@ -85,7 +86,7 @@ export class CheckoutComponent implements OnInit {
     },
     onClientAuthorization: (data) => {
       console.log('onClientAuthorization - you should probably inform your server about completed transaction at this point', data);
-      this.http.post('http://localhost:3000/order',{...this.orderForm,items:this.cartNew}).subscribe((res:any) => {
+      this.http.post(environment.apiUrl+'/order',{...this.orderForm,items:this.cartNew}).subscribe((res:any) => {
       console.log(res)
 
       this.router.navigate(["/order-success"]);

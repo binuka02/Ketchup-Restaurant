@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+
 #full{
   display: grid;
   justify-content:center;
@@ -32,10 +33,7 @@ a{
   // border: 5px solid black;
 }
 
-#right{
-  margin-top: 80px;
 
-}
 
 img{
   border-top-left-radius: 30px;
@@ -58,10 +56,5 @@ img{
   background-color: white;
   border: 1px solid;
   color: black;
-}
-
-a{
-  color: black;
-  font-weight: bold;
 }
 

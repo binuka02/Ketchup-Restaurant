@@ -40,6 +40,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 
 import { NgxPayPalModule } from 'ngx-paypal';
 import { OrderSuccessComponent } from './order/order-success/order-success.component';
+import { AdminSignupComponent } from './admin/admin-signup/admin-signup.component';
 
 @NgModule({
   declarations: [
@@ -53,8 +54,7 @@ import { OrderSuccessComponent } from './order/order-success/order-success.compo
     AdminHomeComponent,
     CheckoutComponent,
     OrderSuccessComponent,
-
-
+    AdminSignupComponent,
   ],
   imports: [
     BrowserModule,
@@ -77,7 +77,7 @@ import { OrderSuccessComponent } from './order/order-success/order-success.compo
     BrowserAnimationsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    NgxPayPalModule
+    NgxPayPalModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
