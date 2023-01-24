@@ -54,6 +54,8 @@ app.get("*", (req, res) => {
     res.sendFile(path.resolve("../Restaurant_Management_System/dist/restaurant-management-system/index.html"));
 });
 
-server.listen(4000, () => console.log('Server started at port : 3000'));
+const port = process.env.PORT || 3000;
+
+server.listen(port, () => console.log('Server started at port : 3000'));
 
 module.exports = app;
