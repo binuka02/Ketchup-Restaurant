@@ -157,6 +157,7 @@ suite("\n***************************** Testing Food Process ********************
             .end((err, res) => {
                 chai.expect(res).to.have.status(200);
                 chai.expect(res.body).to.be.an('object');
+                // Food.deleteMany({})
                 
         })
     })
