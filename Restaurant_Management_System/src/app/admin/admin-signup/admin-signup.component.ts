@@ -13,11 +13,11 @@ export class AdminSignupComponent implements OnInit {
 
   signupForm: FormGroup = new FormGroup({
     firstName : new FormControl('',[Validators.required]),
-    lastName : new FormControl(''),
+    lastName : new FormControl('',[Validators.required]),
     email : new FormControl('',[Validators.email,Validators.required]),
-    username : new FormControl(''),
-    password : new FormControl(''),
-    confirmpassword : new FormControl('')
+    username : new FormControl('',[Validators.required]),
+    password : new FormControl('',[Validators.required]),
+    confirmpassword : new FormControl('',[Validators.required])
   });
 
 
@@ -28,7 +28,7 @@ export class AdminSignupComponent implements OnInit {
 
   onSubmit(){
     if(this.signupForm.invalid){
-      alert("Form is Invalid")
+      alert("Please Enter all Details!")
       return;
     }
     if(this.signupForm.value.password != this.signupForm.value.confirmpassword){

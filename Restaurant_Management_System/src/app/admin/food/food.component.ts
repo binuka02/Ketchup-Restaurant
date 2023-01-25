@@ -11,11 +11,11 @@ import { FoodService } from '../food.service';
 
 export class FoodComponent implements OnInit {
   foodForm : FormGroup = new FormGroup({
-    name: new FormControl(''),
-    price: new FormControl(''),
-    description: new FormControl(''),
-    type: new FormControl(''),
-    image: new FormControl('')
+    name: new FormControl('',[Validators.required]),
+    price: new FormControl('',[Validators.required]),
+    description: new FormControl('',[Validators.required]),
+    type: new FormControl('',[Validators.required]),
+    image: new FormControl('',[Validators.required])
   });
   showModal: boolean = false;
   editMode: boolean = false;
@@ -61,9 +61,16 @@ export class FoodComponent implements OnInit {
     this.showModal = true;
     this.id = food._id
     this.foodForm.patchValue(food);
+
+
   }
 
   onFoodSubmit() {
+    if(this.foodForm.invalid){
+      alert("Please Enter all Details!")
+      return;
+    }
+
     console.log('inside onFoodSubmit')
     console.log('this.foodForm.value: ' + this.foodForm.value)
 

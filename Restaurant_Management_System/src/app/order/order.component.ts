@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Food } from '../admin/food.model';
 import { AppService } from '../app.service';
@@ -17,12 +17,12 @@ cartNew :any= []
 totalPrice:string = ""
 totalPriceNumber:number = 0;
 orderForm:FormGroup = new FormGroup({
-  firstname: new FormControl(''),
-  lastname: new FormControl(''),
-  email: new FormControl(''),
-  phone: new FormControl(''),
-  address: new FormControl(''),
-  city: new FormControl('')
+  firstname: new FormControl('',[Validators.required]),
+  lastname: new FormControl('',[Validators.required]),
+  email: new FormControl('',[Validators.required]),
+  phone: new FormControl('',[Validators.required]),
+  address: new FormControl('',[Validators.required]),
+  city: new FormControl('',[Validators.required])
 
 });
   constructor(private OrderService:OrderService, private appService:AppService,private http:HttpClient,private router:Router) { }
@@ -44,6 +44,7 @@ orderForm:FormGroup = new FormGroup({
 
   onSubmit(){
     if(this.orderForm.invalid){
+      alert("Please Enter all Details!")
       return;
     }
     this.router.navigate(["/checkout"],{queryParams:{...this.orderForm.value,amount:this.totalPriceNumber}})

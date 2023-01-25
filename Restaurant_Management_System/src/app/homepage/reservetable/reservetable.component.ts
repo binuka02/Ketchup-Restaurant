@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AppService } from 'src/app/app.service';
 
 @Component({
@@ -10,13 +10,13 @@ import { AppService } from 'src/app/app.service';
 })
 export class ReservetableComponent implements OnInit {
   tableForm : FormGroup = new FormGroup({
-    firstName : new FormControl(''),
-    lastName : new FormControl(''),
-    email : new FormControl(''),
-    phone : new FormControl(''),
-    date : new FormControl(''),
-    time : new FormControl(''),
-    seatcount : new FormControl('')
+    firstName : new FormControl('',[Validators.required]),
+    lastName : new FormControl('',[Validators.required]),
+    email : new FormControl('',[Validators.required]),
+    phone : new FormControl('',[Validators.required]),
+    date : new FormControl('',[Validators.required]),
+    time : new FormControl('',[Validators.required]),
+    seatcount : new FormControl('',[Validators.required])
   });
 
 
@@ -27,6 +27,7 @@ export class ReservetableComponent implements OnInit {
 
   onSubmit(){
     if(this.tableForm.invalid){
+      alert("Please Enter all Details!")
       return;
     }
     console.log("submit")
