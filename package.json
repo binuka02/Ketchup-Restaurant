@@ -24,7 +24,7 @@
   "main": "index.js",
   "scripts": {
     "start": "cd backend && set NODE_ENV=developement && nodemon app.js",
-    "test": "cd backend && set NODE_ENV=test && mocha --ui tdd --timeout 10000",
+    "test": "cd backend && set NODE_ENV=test && mocha --ui tdd --timeout 10000 --exit",
     "build": "nodemon app.js",
     "build-client": "cd Restaurant_Management_System && npm run build",
     "install-client": "cd Restaurant_Management_System && npm install --force",

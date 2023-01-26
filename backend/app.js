@@ -33,17 +33,6 @@ app.use(bodyParser.json());
 app.use(express.static(path.resolve("../Restaurant_Management_System/dist/restaurant-management-system")))
 app.use('/uploads', express.static(path.resolve('./uploads')));
 
-app.get("/email", async(req, res) => {
-    const user = {
-        name: "John Doe",
-        email: "wabgsilva@gmail.com",
-    }
-    await sendEmail(user, info => {
-                console.log(`The mail has beed send and the id is ${info.messageId}`);
-                res.send(info);
-             });
-});
-
 app.use('/food', foodRoutes);
 app.use('/admin', AdminRoutes);
 app.use('/order', OrderRoutes);

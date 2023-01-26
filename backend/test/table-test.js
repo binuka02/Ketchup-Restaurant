@@ -34,7 +34,7 @@
 //         })
 
 //         //Test Request a Table Reseravtion without giving First Name
-//         test("01. I. Test Request a Table Reseravtion without giving First Name", (done)=>{
+//         test(" I. Test Request a Table Reseravtion without giving First Name", (done)=>{
 //             chai.request(server)
 //             .post('/table')
 //             .send({
@@ -53,7 +53,7 @@
 //         })
 
 //         //Test Request a Table Reseravtion without giving Last Name
-//         test("01. II. Test Request a Table Reseravtion without giving Last Name", (done)=>{
+//         test(" II. Test Request a Table Reseravtion without giving Last Name", (done)=>{
 //             chai.request(server)
 //             .post('/table')
 //             .send({
@@ -72,7 +72,7 @@
 //         })
 
 //         //Test Request a Table Reseravtion without giving Email
-//         test("01. III. Test Request a Table Reseravtion without giving Email", (done)=>{
+//         test(" III. Test Request a Table Reseravtion without giving Email", (done)=>{
 //             chai.request(server)
 //             .post('/table')
 //             .send({
@@ -91,7 +91,7 @@
 //         })
 
 //         //Test Request a Table Reseravtion without giving Contact Number
-//         test("01. IV. Test Request a Table Reseravtion without giving Contact Number", (done)=>{
+//         test(" IV. Test Request a Table Reseravtion without giving Contact Number", (done)=>{
 //             chai.request(server)
 //             .post('/table')
 //             .send({
@@ -110,7 +110,7 @@
 //         })
 
 //         //Test Request a Table Reseravtion without giving Date
-//         test("01. V. Test Request a Table Reseravtion without giving Date", (done)=>{
+//         test(" V. Test Request a Table Reseravtion without giving Date", (done)=>{
 //             chai.request(server)
 //             .post('/table')
 //             .send({
@@ -130,7 +130,7 @@
 
 
 //         //Test Request a Table Reseravtion without giving Time
-//         test("01. VI. Test Request a Table Reseravtion without giving Time", (done)=>{
+//         test(" VI. Test Request a Table Reseravtion without giving Time", (done)=>{
 //             chai.request(server)
 //             .post('/table')
 //             .send({
@@ -149,7 +149,7 @@
 //         })
 
 //         //Test Request a Table Reseravtion without giving Seat Count
-//         test("01. VII. Test Request a Table Reseravtion without giving Seat Count", (done)=>{
+//         test(" VII. Test Request a Table Reseravtion without giving Seat Count", (done)=>{
 //             chai.request(server)
 //             .post('/table')
 //             .send({
