@@ -45,7 +45,7 @@ suite("\n***************************** Testing Order Process *******************
     })
 
     //Test Adding an Order without First Name
-    test("01. I. Test Adding an Order without First Name", (done)=>{
+    test(" I. Test Adding an Order without First Name", (done)=>{
         chai.request(server)
         .post('/order')
         .send({
@@ -69,7 +69,7 @@ suite("\n***************************** Testing Order Process *******************
     })
 
     //Test Adding an Order without Last Name
-    test("01. II. Test Adding an Order without Last Name", (done)=>{
+    test(" II. Test Adding an Order without Last Name", (done)=>{
         chai.request(server)
         .post('/order')
         .send({
@@ -93,7 +93,7 @@ suite("\n***************************** Testing Order Process *******************
     })
 
     //Test Adding an Order without Email
-    test("01. III. Test Adding an Order without Email", (done)=>{
+    test(" III. Test Adding an Order without Email", (done)=>{
         chai.request(server)
         .post('/order')
         .send({
@@ -117,7 +117,7 @@ suite("\n***************************** Testing Order Process *******************
     })
 
     //Test Adding an Order without Contact Number
-    test("01. IV. Test Adding an Order without Contact Number", (done)=>{
+    test(" IV. Test Adding an Order without Contact Number", (done)=>{
         chai.request(server)
         .post('/order')
         .send({
@@ -141,7 +141,7 @@ suite("\n***************************** Testing Order Process *******************
     })
 
     //Test Adding an Order without Address
-    test("01. V. Test Adding an Order without Address", (done)=>{
+    test(" V. Test Adding an Order without Address", (done)=>{
         chai.request(server)
         .post('/order')
         .send({
@@ -165,7 +165,7 @@ suite("\n***************************** Testing Order Process *******************
     })
 
     //Test Adding an Order without City
-    test("01. VI. Test Adding an Order without City", (done)=>{
+    test(" VI. Test Adding an Order without City", (done)=>{
         chai.request(server)
         .post('/order')
         .send({
@@ -188,7 +188,7 @@ suite("\n***************************** Testing Order Process *******************
     })
 
     //Test Adding an Order without Amount
-    test("01. VII. Test Adding an Order without Amount", ()=>{
+    test(" VII. Test Adding an Order without Amount", ()=>{
         chai.request(server)
         .post('/order')
         .send({
@@ -211,7 +211,7 @@ suite("\n***************************** Testing Order Process *******************
     })
 
     //Test Adding an Order without Items
-    test("01. VIII. Test Adding an Order without Items", (done)=>{
+    test(" VIII. Test Adding an Order without Items", (done)=>{
         chai.request(server)
         .post('/order')
         .send({

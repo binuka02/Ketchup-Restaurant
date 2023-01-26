@@ -29,7 +29,7 @@ suite("\n***************************** Testing Food Process ********************
         
     })
 
-    test(" 01. I. Test Adding a Food without Food Name", (done)=>{
+    test(" I. Test Adding a Food without Food Name", (done)=>{
         chai.request(server)
         .post('/food')
         .send({
@@ -45,7 +45,7 @@ suite("\n***************************** Testing Food Process ********************
         
     })
 
-    test(" 01. II. Test Adding a Food without Food Price", (done)=>{
+    test(" II. Test Adding a Food without Food Price", (done)=>{
         chai.request(server)
         .post('/food')
         .send({
@@ -61,7 +61,7 @@ suite("\n***************************** Testing Food Process ********************
         
     })
 
-    test(" 01. III. Test Adding a Food without Description", (done)=>{
+    test(" III. Test Adding a Food without Description", (done)=>{
         chai.request(server)
         .post('/food')
         .send({
@@ -77,7 +77,7 @@ suite("\n***************************** Testing Food Process ********************
         
     })
 
-    test(" 01. IV. Test Adding a Food without Food Type", (done)=>{
+    test(" IV. Test Adding a Food without Food Type", (done)=>{
         chai.request(server)
         .post('/food')
         .send({
@@ -133,7 +133,7 @@ suite("\n***************************** Testing Food Process ********************
         })
     })
 
-    test(" 04. I. Test Updating a Food without Food Name", (done)=>{
+    test(" I. Test Updating a Food without Food Name", ()=>{
         const food = Food.findOne({})
         chai.request(server)
         .patch('/food/'+food._id)
@@ -145,10 +145,56 @@ suite("\n***************************** Testing Food Process ********************
         .end((err, res) => {
             chai.expect(res).to.have.status(400);
             chai.assert.equal(res.body.msg,'All fields are required');
-            done();
         })
         
     })
+
+    test(" II. Test Updating a Food without Food Price", async()=>{
+        const food = await Food.findOne({})
+            chai.request(server)
+            .patch('/food/'+food._id)
+            .send({
+                name: "Test Food 2",
+                description: "Testing Update a Food",
+                type: "lunch",
+            })
+            .end((err, res) => {
+                chai.expect(res).to.have.status(400);
+                chai.assert.equal(res.body.msg,'All fields are required');
+        })
+    })
+
+    test(" III. Test Updating a Food without Food Description", async()=>{
+        const food = await Food.findOne({})
+            chai.request(server)
+            .patch('/food/'+food._id)
+            .send({
+                name: "Test Food 2",
+                price: 50,
+                type: "lunch",
+            })
+            .end((err, res) => {
+                chai.expect(res).to.have.status(400);
+                chai.assert.equal(res.body.msg,'All fields are required');
+        })
+    })
+
+    test(" IV. Test Updating a Food without Food Type", async()=>{
+        const food = await Food.findOne({})
+            chai.request(server)
+            .patch('/food/'+food._id)
+            .send({
+                name: "Test Food 2",
+                price: 50,
+                description: "Testing Update a Food",
+            })
+            .end((err, res) => {
+                chai.expect(res).to.have.status(400);
+                chai.assert.equal(res.body.msg,'All fields are required');
+        })
+    })
+
+    
 
     test("05. Test Deleting a Food by ID", async()=>{
         const food = await Food.findOne({})
