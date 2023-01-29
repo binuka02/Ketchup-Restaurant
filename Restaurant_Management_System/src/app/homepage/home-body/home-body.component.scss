@@ -81,7 +81,7 @@ img {
 }
 
 #row1_2{
-  height: 550px;
+
   border: none;
   text-align: center;
   margin-top: 100px;
@@ -106,14 +106,15 @@ img {
 
 #our_menus{
   font-family: 'sans-serif';
-  font-size: 70px;
+  font-size: 4vw;
   font-weight: bold;
   text-align: center;
   color: #091745;
 }
 
 #our_menus:hover{
-  font-size: 450%;
+  transform: scale(1.05);
+  cursor: pointer;
 }
 
 
@@ -141,6 +142,7 @@ img {
 #col_6_padding{
   padding-right:0px;
   padding-left:0px;
+
 }
 
 #hoverimg {
@@ -251,15 +253,19 @@ body {
     perspective: 1000;
 }
 
+
 .profile-card-6 {
-  max-width: 300px;
-  height: 350px;
+  // max-width: 350px;
+  // height: 400px;
+  height: 50vh;
+  width: 20rem;
   background-color: #FFF;
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   position: relative;
-  margin: 10px auto;
+  margin-left: 50px;
+  margin-right: 50px;
   cursor: pointer;
 }
 
@@ -344,11 +350,22 @@ body {
 
 }
 
-#row4_2{
+.floatcontainer{
+  float: right;
+}
+
+#home_delivery{
   display: block;
   border: none;
   text-align: right;
-  align-items: right;
+
+}
+
+#reserve_table{
+  display: block;
+  border: none;
+  text-align: left;
+
 }
 
 #row4_details{
@@ -394,7 +411,7 @@ html {
 }
 
 .card {
-	width: 300px;
+	width: 20rem;
   border-radius: 15px;
 	background-color: white;
 	box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
@@ -551,9 +568,80 @@ html {
 
 #menu{
   font-family: 'sans-serif';
-  font-size: 100px;
+  font-size: 5vw;
   font-weight: bold;
   text-align: center;
   color: #091745;
   margin-top: 50px;
+}
+
+
+
+
+//grid
+
+
+.img-container-grid{
+  display:flex;
+  flex-wrap: wrap;
+}
+
+.smallsquare{
+  max-width:20%;
+  height:auto;
+  flex:0 0 20%;
+  padding-top:20%;
+  display:grid;
+  position:relative;
+}
+
+.h_rectangle{
+  max-width: 40%;
+  flex: 0 0 40%;
+  padding-top:20%;
+  position:relative;
+}
+
+.bigsquare{
+  max-width:40%;
+  height:auto;
+  flex:0 0 40%;
+  padding-top:40%;
+  display:grid;
+  position:relative;
+}
+.bigsquare_blank{
+  max-width:40%;
+  height:auto;
+  flex:0 0 40%;
+  display:flex;
+  flex-wrap: wrap;
+}
+.inner_square{
+  max-width:50%;
+  flex: 0 0 50%;
+  height:50%;
+  position:relative;
+}
+.v_rectangle{
+  max-width: 20%;
+  flex: 0 0 20%;
+  padding-top:40%;
+  position:relative;
+}
+
+.img-grid-c{
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  position:absolute;
+  object-fit:cover;
+  object-position:center;
+  padding:2.5px;
+}
+
+.container-div{
+  padding-left: 50px;
+  padding-right: 50px;
 }
