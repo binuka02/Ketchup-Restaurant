@@ -4,7 +4,7 @@ const Order = mongoose.model('Order', {
     firstname: {type: String},
     lastname: {type: String},
     email: {type: String},
-    phone: {type: Number},
+    phone: {type: String},
     address: {type: String},
     city: {type: String},
     amount: {type: Number},
