@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AppService } from 'src/app/app.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-reservetable',
@@ -20,7 +22,7 @@ export class ReservetableComponent implements OnInit {
   });
 
 
-  constructor(private appService:AppService,private http:HttpClient) { }
+  constructor(private appService:AppService,private http:HttpClient,private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -36,6 +38,7 @@ export class ReservetableComponent implements OnInit {
       console.log(res)
     } )
     this.tableForm.reset();
+    this.router.navigate(["/reserve-success"])
   }
 
 }
