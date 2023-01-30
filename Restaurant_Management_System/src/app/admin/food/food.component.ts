@@ -15,7 +15,7 @@ export class FoodComponent implements OnInit {
     price: new FormControl('',[Validators.required]),
     description: new FormControl('',[Validators.required]),
     type: new FormControl('',[Validators.required]),
-    image: new FormControl('',[Validators.required])
+    image: new FormControl('',[])
   });
   showModal: boolean = false;
   editMode: boolean = false;
