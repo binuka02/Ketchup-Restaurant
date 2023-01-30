@@ -19,6 +19,7 @@ export class AdminLoginComponent implements OnInit{
     })
    }
   ngOnInit(): void {}
+
   login() {
     console.log(this.loginform.value);
     // alert("Login Successful");

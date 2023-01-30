@@ -5,7 +5,7 @@ const Food = mongoose.model('Food', {
     price: {type: Number,required: true},
     description: {type: String,required: true},
     type: {type: String, enum: ['breakfast', 'lunch', 'dinner', 'drinks', 'desserts', 'soups'],required: true},
-    imageUrl: {type: String,required: true}
+    imageUrl: {type: String}
 })
 
 module.exports = Food;

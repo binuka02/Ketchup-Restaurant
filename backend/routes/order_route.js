@@ -11,7 +11,7 @@ router.post('/', async(req, res) => {
     const amountNew = +amount
     console.log(firstname, lastname, email, phone, address, city, amount, items)
     const order = await Order.create({firstname: firstname, lastname: lastname, email: email, phone: phone, address: address, city: city, amount: amountNew, items: items});
-    const customer  = await Customer.create({firstname: firstname, lastname: lastname, email: email, phone: phone, address: address, city: city});
+    //const customer  = await Customer.create({firstname: firstname, lastname: lastname, email: email, phone: phone, address: address, city: city});
     
     // new
     if(!firstname || !lastname ||!email ||!phone || !address || !city ||!amount || !items){
@@ -23,9 +23,9 @@ router.post('/', async(req, res) => {
         name: firstname + " " + lastname,
         amount
     }
-    await sendEmail(user,info => {
-        console.log(`The mail has beed send and the id is ${info.messageId}`);
-     })
+    // await sendEmail(user,info => {
+    //     console.log(`The mail has beed send and the id is ${info.messageId}`);
+    //  })
     res.status(201).json({order, customer});
 });
 

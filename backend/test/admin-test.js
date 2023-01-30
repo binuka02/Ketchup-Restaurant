@@ -15,7 +15,7 @@ suite("\n***************************** Testing Admin Login Process *************
             firstName: "Test First",
             lastName: "Test Last",
             email: "abc@gmail.com",
-            username: "test admin",
+            username: "admin",
             password: "admin123",
         })
         .end((err, res) => {
@@ -27,7 +27,8 @@ suite("\n***************************** Testing Admin Login Process *************
             chai.expect(res.body).to.have.property('password');
         })  
     })
-    test("01. Test Admin Login", ()=>{
+
+    test("02. Test Admin Login", ()=>{
         chai.request(server)
         .post('/admin/login')
         .send({
@@ -41,22 +42,6 @@ suite("\n***************************** Testing Admin Login Process *************
         })  
     })
 
-    test("01. Test Admin Login", ()=>{
-        for(let i=0;i<100;i++){
-            chai.request(server)
-            .post('/admin/login')
-            .send({
-                username: "admin",
-                password: "admin123",
-            })
-            .end((err, res) => {
-                chai.expect(res).to.have.status(200);
-                chai.expect(res.body).to.have.property('username');
-                chai.expect(res.body).to.have.property('password');
-            })  
-
-        }
-    })
 
     test(" I. Test Admin Login without entering Username", ()=>{
         chai.request(server)
@@ -84,6 +69,49 @@ suite("\n***************************** Testing Admin Login Process *************
         })  
     })
    
+    test("03. Load Testing of Admin Login", ()=>{
+        for(let i=0;i<20;i++){
+            chai.request(server)
+            .post('/admin/login')
+            .send({
+                username: "admin",
+                password: "admin123",
+            })
+            .end((err, res) => {
+                chai.expect(res).to.have.status(200);
+                chai.expect(res.body).to.have.property('username');
+                chai.expect(res.body).to.have.property('password');
+            })  
+
+        }
+    })
+
+    test("04. Load Testing of Admin Signup", async()=>{
+        for(let i=0;i<20;i++){
+            chai.request(server)
+            .post('/admin/register')
+            .send({
+                firstName: "Test First",
+                lastName: "Test Last",
+                email: "abc@gmail.com",
+                username: "test admin",
+                password: "admin123",
+        })
+        .end((err, res) => {
+            chai.expect(res).to.have.status(201);
+            chai.expect(res.body).to.have.property('firstName');
+            chai.expect(res.body).to.have.property('lastName');
+            chai.expect(res.body).to.have.property('email');
+            chai.expect(res.body).to.have.property('username');
+            chai.expect(res.body).to.have.property('password');
+        })  
+        }
+    })
+
+    suiteTeardown(async()=>{
+        await Admin.deleteMany({})
+    })
+
 })
 
 

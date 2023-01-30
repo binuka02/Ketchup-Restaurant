@@ -1,16 +1,16 @@
 
 <div class="container py-3" id="vieworders">
   <div class="row">
-      <div class="col">
+      <div class="col" id="title">
           <h2>View Table Reservations</h2>
       </div>
   </div>
   <hr>
   <br>
   <div class="row">
-    <div class="col-12">
+    <div class="col-12" id="table">
       <!-- <h4 *ngIf="cart.length===0">NO items</h4> -->
-      <table class="table table-image" *ngIf="table.length>0">
+      <table class="table table-image" *ngIf="table.length>0" >
         <thead>
           <tr>
             <th scope="col">#</th>
@@ -23,7 +23,7 @@
             <th scope="col">Number of Seats</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody >
           <tr *ngFor="let item of table;index as i">
             <th scope="row">{{i+1}}</th>
             <td>{{item.firstName}}</td>
