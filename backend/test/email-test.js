@@ -1,5 +1,6 @@
 const chaiHttp = require("chai-http")
 const sendEmail = require("../sendEmail")
+const chai = require("chai")
 
 suite("\n***************************** Testing Email *****************************\n",()=>{
             setup(()=>{console.log("Setup")})
@@ -14,6 +15,7 @@ suite("\n***************************** Testing Email ***************************
                 await sendEmail(user,info => {
    
                     console.log(`The mail has beed send and the id is ${info.messageId}`);
+                    chai.expect(info).to.haveOwnProperty('messageId')
                   
                 
                  })})

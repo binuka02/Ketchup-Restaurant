@@ -4,7 +4,7 @@
           <h2>Food Management</h2>
       </div>
       <div class="col ml-auto text-right" id="add_food">
-          <button type="button" class="btn btn-dark" (click)="onAddFood()">Add Food</button>
+          <button type="button" class="btn btn-dark" id="addbtn" (click)="onAddFood()">Add Food</button>
       </div>
   </div>
   <hr>
@@ -76,7 +76,7 @@
               </div>
               </div>
               <div class="modal-footer">
-                  <button type="button" (click)="onCloseModal()" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" (click)="onCloseModal()" class="btn btn-secondary" id="closebtn" data-dismiss="modal">Close</button>
                   <button type="submit" class="btn btn-primary">{{editMode? 'Update Food' :'Add Food'}}</button>
               </div>
           </form>

@@ -12,6 +12,6 @@ env:
   global:
     - NODE_ENV=test
 script:
-  - npm run
+  - npm run test
 notifications:
   email: ketchupfoods@gmail.com
