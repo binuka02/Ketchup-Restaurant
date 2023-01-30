@@ -6,7 +6,7 @@ const Order = require('../models/order');
 
 chai.use(chaiHttp)
 
-suite("\n***************************** Testing Order Process *****************************\n",()=>{
+suite.only("\n***************************** Testing Order Process *****************************\n",()=>{
 
     test("01. Test Adding an Order",async()=>{
         chai.request(server)

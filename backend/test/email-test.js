@@ -2,7 +2,7 @@ const chaiHttp = require("chai-http")
 const sendEmail = require("../sendEmail")
 const chai = require("chai")
 
-suite("\n***************************** Testing Email *****************************\n",()=>{
+suite.only("\n***************************** Testing Email *****************************\n",()=>{
             setup(()=>{console.log("Setup")})
             //Test Request a Table Reseravtion
             test("Send Email", async()=>{

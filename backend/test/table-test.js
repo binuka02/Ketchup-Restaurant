@@ -5,7 +5,7 @@ const Table = require('../models/table');
 
 chai.use(chaiHttp)
 
-suite("\n***************************** Testing Table Reservation Process *****************************\n",()=>{
+suite.only("\n***************************** Testing Table Reservation Process *****************************\n",()=>{
         
         //Test Request a Table Reseravtion
         test("01. Test Request a Table Reseravtion", (done)=>{

@@ -6,9 +6,9 @@ const sendEmail = require("../sendEmail")
 
 chai.use(chaiHttp)
 
-suite("\n***************************** Testing Admin Login Process *****************************\n",()=>{
+suite.only("\n***************************** Testing Admin Login and Signup Process *****************************\n",()=>{
     
-    test("01. Test Admin Signup", ()=>{
+    test.only("01. Test Admin Signup", ()=>{
         chai.request(server)
         .post('/admin/register')
         .send({
@@ -28,7 +28,7 @@ suite("\n***************************** Testing Admin Login Process *************
         })  
     })
 
-    test("02. Test Admin Login", ()=>{
+    test.only("02. Test Admin Login", ()=>{
         chai.request(server)
         .post('/admin/login')
         .send({
@@ -43,7 +43,7 @@ suite("\n***************************** Testing Admin Login Process *************
     })
 
 
-    test(" I. Test Admin Login without entering Username", ()=>{
+    test.only(" I. Test Admin Login without entering Username", ()=>{
         chai.request(server)
         .post('/admin/login')
         .send({
@@ -56,7 +56,7 @@ suite("\n***************************** Testing Admin Login Process *************
         })  
     })
 
-    test(" II. Test Admin Login without entering Password", ()=>{
+    test.only(" II. Test Admin Login without entering Password", ()=>{
         chai.request(server)
         .post('/admin/login')
         .send({

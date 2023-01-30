@@ -6,7 +6,7 @@ const sendEmail = require('../sendEmail');
 
 chai.use(chaiHttp)
 
-suite("\n***************************** Testing Food Process *****************************\n",()=>{
+suite.only("\n***************************** Testing Food Process *****************************\n",()=>{
 
     test("01. Test Adding a Food", (done)=>{
         chai.request(server)
